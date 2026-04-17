@@ -22,6 +22,11 @@
   </header>
 
   <main>
+    <div id="compare-bar" class="compare-bar" role="status" aria-live="polite">
+      <p id="compare-bar-text" class="compare-bar-text"></p>
+      <button id="compare-reset" class="compare-reset">Clear</button>
+    </div>
+
     <section class="hero">
       <div class="container">
         <h1>Rod Comparison</h1>
@@ -51,6 +56,7 @@
                     <span class="series-price">$399</span>
                     <span class="series-sensitivity">133% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy 10X rod for $399">Add to Cart</a>
+                  <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
                 <th class="series-col" data-series="6X" scope="col">
@@ -59,6 +65,7 @@
                     <span class="series-price">$299</span>
                     <span class="series-sensitivity">100% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy 6X rod for $299">Add to Cart</a>
+                    <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
                 <th class="series-col" data-series="3X" scope="col">
@@ -67,6 +74,7 @@
                     <span class="series-price">$199</span>
                     <span class="series-sensitivity">50% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy 3X rod for $199">Add to Cart</a>
+                    <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
                 <th class="series-col" data-series="X" scope="col">
@@ -75,6 +83,7 @@
                     <span class="series-price">$149</span>
                     <span class="series-sensitivity">25% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy X rod for $149">Add to Cart</a>
+                    <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
               </tr>
