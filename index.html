@@ -22,6 +22,11 @@
   </header>
 
   <main>
+    <div id="compare-bar" class="compare-bar" role="status" aria-live="polite">
+      <p id="compare-bar-text" class="compare-bar-text"></p>
+      <button id="compare-reset" class="compare-reset">Clear</button>
+    </div>
+
     <section class="hero">
       <div class="container">
         <h1>Rod Comparison</h1>
@@ -51,6 +56,7 @@
                     <span class="series-price">$399</span>
                     <span class="series-sensitivity">133% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy 10X rod for $399">Add to Cart</a>
+                  <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
                 <th class="series-col" data-series="6X" scope="col">
@@ -59,6 +65,7 @@
                     <span class="series-price">$299</span>
                     <span class="series-sensitivity">100% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy 6X rod for $299">Add to Cart</a>
+                    <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
                 <th class="series-col" data-series="3X" scope="col">
@@ -67,6 +74,7 @@
                     <span class="series-price">$199</span>
                     <span class="series-sensitivity">50% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy 3X rod for $199">Add to Cart</a>
+                    <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
                 <th class="series-col" data-series="X" scope="col">
@@ -75,6 +83,7 @@
                     <span class="series-price">$149</span>
                     <span class="series-sensitivity">25% More Sensitive*</span>
                     <a href="#" class="btn-buy" aria-label="Buy X rod for $149">Add to Cart</a>
+                    <button class="compare-toggle" aria-pressed="false">Compare</button>
                   </div>
                 </th>
               </tr>
@@ -193,6 +202,84 @@
         </div>
 
         <p class="disclaimer">*On average MORE SENSITIVE than competitors' high-end rods</p>
+      </div>
+    </section>
+
+    <!-- Rod Finder Quiz -->
+    <section class="quiz-section" id="quiz">
+      <div class="container">
+        <h2>Which Rod is Right for You?</h2>
+        <p class="section-sub">Two questions. Your perfect match.</p>
+
+        <div class="quiz-steps" aria-label="Quiz progress">
+          <span class="quiz-step active" data-step="1"><span class="step-num">1</span><span class="step-label">Technique</span></span>
+          <div class="quiz-step-divider"></div>
+          <span class="quiz-step" data-step="2"><span class="step-num">2</span><span class="step-label">Sensitivity</span></span>
+          <div class="quiz-step-divider"></div>
+          <span class="quiz-step" data-step="result"><span class="step-num">&#10003;</span><span class="step-label">Result</span></span>
+        </div>
+
+        <div class="quiz-panels">
+
+          <!-- Q1: Technique -->
+          <div class="quiz-panel active" id="quiz-panel-1" role="group" aria-labelledby="quiz-q1">
+            <p class="quiz-question" id="quiz-q1">What is your primary fishing technique?</p>
+            <div class="quiz-options">
+              <button class="quiz-opt" data-q="1" data-value="finesse">
+                <span class="opt-title">Finesse</span>
+                <span class="opt-desc">Drop-shot, Ned rig, shaky head</span>
+              </button>
+              <button class="quiz-opt" data-q="1" data-value="power">
+                <span class="opt-title">Power Fishing</span>
+                <span class="opt-desc">Flipping, frogging, swimbaits</span>
+              </button>
+              <button class="quiz-opt" data-q="1" data-value="jigging">
+                <span class="opt-title">Jigging</span>
+                <span class="opt-desc">Football jig, flutter spoon, vertical</span>
+              </button>
+              <button class="quiz-opt" data-q="1" data-value="versatile">
+                <span class="opt-title">Versatile</span>
+                <span class="opt-desc">Mix of techniques, all-around rod</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Q2: Sensitivity priority -->
+          <div class="quiz-panel" id="quiz-panel-2" role="group" aria-labelledby="quiz-q2">
+            <p class="quiz-question" id="quiz-q2">What matters most to you?</p>
+            <div class="quiz-options quiz-options--3">
+              <button class="quiz-opt" data-q="2" data-value="max-sensitivity">
+                <span class="opt-title">Maximum Sensitivity</span>
+                <span class="opt-desc">I want to feel every tap and tick</span>
+              </button>
+              <button class="quiz-opt" data-q="2" data-value="balance">
+                <span class="opt-title">Performance + Value</span>
+                <span class="opt-desc">High performance without overpaying</span>
+              </button>
+              <button class="quiz-opt" data-q="2" data-value="value">
+                <span class="opt-title">Best Value</span>
+                <span class="opt-desc">Great sensitivity at the best price</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Result -->
+          <div class="quiz-panel" id="quiz-panel-result">
+            <p class="quiz-question">Your Perfect Match</p>
+            <div class="quiz-result-card">
+              <div class="result-badge">Recommended for You</div>
+              <div class="result-series" id="quiz-result-series"></div>
+              <div class="result-price" id="quiz-result-price"></div>
+              <p class="result-reason" id="quiz-result-reason"></p>
+              <div class="quiz-result-actions">
+                <a href="#" class="btn-buy result-cta" id="quiz-result-buy">Add to Cart</a>
+                <button class="quiz-see-table" id="quiz-see-table">See in Comparison Table &#8593;</button>
+              </div>
+            </div>
+            <button class="quiz-reset" id="quiz-reset">&#8635; Start Over</button>
+          </div>
+
+        </div>
       </div>
     </section>
 
