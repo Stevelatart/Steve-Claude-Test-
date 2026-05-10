@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trika Analytics Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #F26522;
+      --orange-dark: #D4541A;
+      --gray-dark: #1A1A1A;
+      --gray-mid: #4A4A4A;
+      --gray-light: #F5F5F5;
+      --gray-border: #E0E0E0;
+      --white: #FFFFFF;
+      --green: #28a745;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--gray-dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--orange); }
+
+    .header-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .refresh-info {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+
+    /* ── Stat cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--orange);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-mid);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gray-dark);
+      line-height: 1;
+    }
+
+    .stat-sub {
+      font-size: 0.75rem;
+      color: #999;
+      margin-top: 6px;
+    }
+
+    /* ── Two-column layout ── */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 700px) { .row { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    /* ── Cart bar chart ── */
+    .cart-bars { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+
+    .cart-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 48px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-label { font-weight: 800; font-size: 0.9rem; text-align: right; }
+
+    .cart-track {
+      background: var(--gray-border);
+      border-radius: 30px;
+      height: 32px;
+      overflow: hidden;
+    }
+
+    .cart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--orange-dark), var(--orange));
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--white);
+      min-width: 40px;
+      transition: width 0.6s ease;
+    }
+
+    .cart-count { font-size: 0.85rem; font-weight: 600; color: var(--gray-mid); }
+
+    /* ── Trend sparkline ── */
+    .trend-chart {
+      width: 100%;
+      height: 120px;
+      margin-top: 8px;
+    }
+
+    /* ── Top pages table ── */
+    .pages-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.85rem; }
+    .pages-table th {
+      text-align: left;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      padding: 6px 8px;
+      border-bottom: 2px solid var(--gray-border);
+    }
+    .pages-table td { padding: 8px; border-bottom: 1px solid var(--gray-border); }
+    .pages-table tr:last-child td { border-bottom: none; }
+    .pages-table .views { font-weight: 700; color: var(--orange); text-align: right; }
+
+    /* ── Status / error ── */
+    .status {
+      text-align: center;
+      padding: 60px 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .error { color: #c0392b; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">TRIK<span>&#9658;</span>A</div>
+  <div class="header-label">Analytics Dashboard</div>
+  <div class="refresh-info" id="last-updated">Loading…</div>
+</header>
+
+<main>
+  <div id="content">
+    <div class="status">Fetching GA4 data…</div>
+  </div>
+</main>
+
+<script>
+  const fmt = n => Number(n).toLocaleString();
+  const pct = n => n + '%';
+
+  function buildDashboard(data) {
+    const ov = data.overview || {};
+    const cart = data.cart_by_series || [];
+    const trend = data.trend || [];
+    const pages = data.top_pages || [];
+
+    const maxCart = Math.max(...cart.map(r => r.count), 1);
+
+    // Trend SVG sparkline
+    const tW = 400, tH = 100;
+    const maxSessions = Math.max(...trend.map(r => r.sessions), 1);
+    const pts = trend.map((r, i) => {
+      const x = (i / Math.max(trend.length - 1, 1)) * tW;
+      const y = tH - (r.sessions / maxSessions) * tH;
+      return `${x},${y}`;
+    }).join(' ');
+
+    const sparkline = trend.length > 1
+      ? `<polyline points="${pts}" fill="none" stroke="#F26522" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`
+      : '<text x="50%" y="50%" text-anchor="middle" fill="#aaa" font-size="12">Not enough data</text>';
+
+    document.getElementById('content').innerHTML = `
+      <section style="margin-bottom:28px">
+        <h2>Last 7 Days</h2>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Sessions</div>
+            <div class="stat-value">${fmt(ov.sessions ?? '—')}</div>
+            <div class="stat-sub">unique sessions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Page Views</div>
+            <div class="stat-value">${fmt(ov.pageviews ?? '—')}</div>
+            <div class="stat-sub">total pages viewed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Users</div>
+            <div class="stat-value">${fmt(ov.users ?? '—')}</div>
+            <div class="stat-sub">total users</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Bounce Rate</div>
+            <div class="stat-value">${ov.bounce_rate != null ? pct(ov.bounce_rate) : '—'}</div>
+            <div class="stat-sub">sessions with 1 page</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="row">
+        <div class="panel">
+          <h2>Add to Cart — Last 30 Days</h2>
+          <div class="cart-bars">
+            ${cart.length ? cart.map(r => `
+              <div class="cart-row">
+                <div class="cart-label">${r.series}</div>
+                <div class="cart-track">
+                  <div class="cart-fill" style="width:${Math.round((r.count / maxCart) * 100)}%">${r.count}</div>
+                </div>
+                <div class="cart-count">${fmt(r.count)}</div>
+              </div>
+            `).join('') : '<p style="color:#aaa;font-size:0.85rem;margin-top:8px">No cart events yet</p>'}
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Session Trend — Last 14 Days</h2>
+          <svg class="trend-chart" viewBox="0 0 ${tW} ${tH}" preserveAspectRatio="none" aria-label="Sessions over 14 days">
+            ${sparkline}
+          </svg>
+          <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:#aaa;margin-top:4px">
+            <span>${trend[0]?.date ?? ''}</span>
+            <span>${trend[trend.length - 1]?.date ?? ''}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Top Pages — Last 7 Days</h2>
+        ${pages.length ? `
+          <table class="pages-table">
+            <thead><tr><th>Page</th><th style="text-align:right">Views</th></tr></thead>
+            <tbody>
+              ${pages.map(p => `<tr><td>${p.path}</td><td class="views">${fmt(p.views)}</td></tr>`).join('')}
+            </tbody>
+          </table>
+        ` : '<p style="color:#aaa;font-size:0.85rem;margin-top:8px">No page data yet</p>'}
+      </div>
+    `;
+  }
+
+  async function load() {
+    try {
+      const res = await fetch('/api/metrics');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      buildDashboard(data);
+      document.getElementById('last-updated').textContent =
+        'Updated ' + new Date().toLocaleTimeString();
+    } catch (err) {
+      document.getElementById('content').innerHTML =
+        `<div class="status error">Failed to load GA4 data: ${err.message}<br><small>Check server logs and ensure credentials are configured.</small></div>`;
+      document.getElementById('last-updated').textContent = 'Error';
+    }
+  }
+
+  load();
+  // Auto-refresh every 60 seconds
+  setInterval(load, 60_000);
+</script>
+
+</body>
+</html>
