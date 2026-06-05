@@ -172,11 +172,142 @@
   }
 
 
-  /* ── Set minimum date on date picker ───────────────────────── */
-  const datePicker = document.getElementById('preferred-date');
-  if (datePicker) {
-    const today = new Date().toISOString().split('T')[0];
-    datePicker.setAttribute('min', today);
+  /* ── Set minimum date on date pickers ─────────────────────── */
+  const today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach((dp) => {
+    dp.setAttribute('min', today);
+  });
+
+
+  /* ── Hero image slideshow ──────────────────────────────────── */
+  const slides   = document.querySelectorAll('.hero-slide');
+  const dots     = document.querySelectorAll('.hero-dot');
+  let current    = 0;
+  let slideTimer = null;
+
+  function goToSlide(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide(current + 1);
+  }
+
+  function startTimer() {
+    slideTimer = setInterval(nextSlide, 5000);
+  }
+
+  if (slides.length > 1) {
+    startTimer();
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(slideTimer);
+        goToSlide(i);
+        startTimer();
+      });
+    });
+
+    // Pause on tab hidden, resume on visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearInterval(slideTimer);
+      } else {
+        startTimer();
+      }
+    });
+  }
+
+
+  /* ── Hero scheduler form handler ───────────────────────────── */
+  const heroForm       = document.getElementById('hero-form');
+  const heroSuccess    = document.getElementById('hero-form-success');
+
+  function handleSchedulerForm(form, successEl) {
+    if (!form || !successEl) return;
+
+    const setMin = form.querySelector('input[type="date"]');
+    if (setMin) setMin.setAttribute('min', today);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name    = form.querySelector('[name="name"]');
+      const phone   = form.querySelector('[name="phone"]');
+      const service = form.querySelector('[name="service"]');
+      let valid = true;
+
+      [name, phone, service].forEach((f) => {
+        if (!f) return;
+        const empty = !f.value.trim();
+        f.classList.toggle('error', empty);
+        if (empty) valid = false;
+      });
+
+      if (!valid) return;
+
+      const btn = form.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      setTimeout(() => {
+        if (btn) btn.style.display = 'none';
+        successEl.hidden = false;
+        form.reset();
+      }, 800);
+    });
+
+    form.querySelectorAll('.sform-input').forEach((f) => {
+      f.addEventListener('input', () => f.classList.remove('error'));
+    });
+  }
+
+  handleSchedulerForm(heroForm, heroSuccess);
+
+
+  /* ── Booking form submission handler ───────────────────────── */
+  const form        = document.getElementById('booking-form');
+  const successMsg  = document.getElementById('form-success');
+
+  if (form && successMsg) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name    = form.querySelector('#name');
+      const phone   = form.querySelector('#phone');
+      const service = form.querySelector('#service');
+      let valid = true;
+
+      [name, phone, service].forEach((field) => {
+        if (!field) return;
+        const isEmpty = !field.value.trim();
+        field.style.borderColor = isEmpty ? 'var(--error)' : '';
+        if (isEmpty) valid = false;
+      });
+
+      if (!valid) return;
+
+      const submitBtn = form.querySelector('.form-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      setTimeout(() => {
+        if (submitBtn) submitBtn.style.display = 'none';
+        successMsg.hidden = false;
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        form.reset();
+      }, 800);
+    });
+
+    form.querySelectorAll('.form-input').forEach((field) => {
+      field.addEventListener('input', () => {
+        field.style.borderColor = '';
+      });
+    });
   }
 
 })();

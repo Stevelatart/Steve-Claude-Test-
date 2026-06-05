@@ -356,55 +356,101 @@ button {
 
 
 /* ============================================================
-   HERO
+   HERO — Full-screen slideshow + sticky right scheduler
    ============================================================ */
 .hero {
   position: relative;
-  background: var(--navy-900);
+  min-height: calc(100vh - var(--header-h));
   overflow: hidden;
-  padding-block: clamp(80px, 14vw, 128px);
+  display: flex;
+  align-items: stretch;
 }
 
-/* Diagonal texture overlay */
-.hero-texture {
+/* ── Slideshow background ───── */
+.hero-slides {
   position: absolute;
   inset: 0;
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.025) 0px,
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px,
-      transparent 48px
-    );
-  pointer-events: none;
+  z-index: 0;
 }
 
-/* Subtle radial glow */
-.hero::after {
-  content: '';
+.hero-slide {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 70% 60% at 60% 40%,
-    rgba(81, 197, 242, 0.08) 0%,
-    transparent 70%
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out);
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(22, 42, 55, 0.82) 0%,
+    rgba(22, 42, 55, 0.65) 55%,
+    rgba(22, 42, 55, 0.45) 100%
   );
-  pointer-events: none;
 }
 
-.hero-inner {
+/* ── Slide dots ─────────────── */
+.hero-dots {
+  position: absolute;
+  bottom: 28px;
+  left: var(--gutter);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--base) var(--ease-out),
+              width var(--base) var(--ease-out);
+}
+
+.hero-dot.active {
+  background: var(--orange);
+  width: 24px;
+}
+
+/* ── Split layout ─────────────── */
+.hero-split {
   position: relative;
-  z-index: 1;
-  max-width: 780px;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 48px;
+  align-items: start;
+  padding-top: clamp(64px, 10vw, 96px);
+  padding-bottom: clamp(80px, 12vw, 120px);
 }
 
-.hero .eyebrow {
+/* ── Left: Hero content ─────── */
+.hero-content {
+  padding-right: 24px;
+}
+
+.hero-content .eyebrow {
   margin-bottom: 16px;
 }
 
 .hero-headline {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -413,16 +459,14 @@ button {
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.72);
-  margin-bottom: 40px;
-  max-width: 580px;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 32px;
+  max-width: 520px;
+  font-size: 1.1rem;
 }
 
-.hero-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 56px;
+.hero-explore-btn {
+  margin-bottom: 48px;
 }
 
 /* Trust badges */
@@ -443,6 +487,141 @@ button {
 
 .trust-icon {
   font-size: 1rem;
+}
+
+/* ── Right: Sticky scheduler ── */
+.hero-scheduler-wrap {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  align-self: start;
+}
+
+.hero-scheduler {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(22,42,55,0.06);
+  overflow: hidden;
+}
+
+.scheduler-header {
+  background: var(--navy-800);
+  padding: 24px 28px 20px;
+}
+
+.scheduler-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.scheduler-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.scheduler-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Scheduler form */
+.scheduler-form {
+  padding: 20px 28px 0;
+}
+
+.sform-group {
+  margin-bottom: 14px;
+}
+
+.sform-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 5px;
+}
+
+.sform-label span {
+  color: var(--orange);
+}
+
+.sform-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-strong);
+  background: var(--ice);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--fast) var(--ease-out),
+              box-shadow var(--fast) var(--ease-out);
+  outline: none;
+  appearance: none;
+}
+
+.sform-input:focus {
+  border-color: var(--navy-500);
+  box-shadow: 0 0 0 3px rgba(58, 94, 116, 0.15);
+  background: #fff;
+}
+
+.sform-input.error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(216, 65, 47, 0.12);
+}
+
+.sform-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C7180' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.sform-submit {
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.sform-success {
+  margin: 12px 0 4px;
+  padding: 12px 16px;
+  background: #E6F6EC;
+  color: var(--success);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.scheduler-phone {
+  padding: 16px 28px 20px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.scheduler-phone a {
+  color: var(--navy-700);
+  font-weight: 700;
+}
+
+.scheduler-phone span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
 }
 
 
@@ -996,6 +1175,11 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .hero-split {
+    grid-template-columns: 1fr 360px;
+    gap: 32px;
+  }
+
   .booking-inner {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1067,21 +1251,27 @@ button {
     border-bottom: none;
   }
 
-  /* Hero */
+  /* Hero — stack on mobile */
+  .hero-split {
+    grid-template-columns: 1fr;
+    padding-top: 48px;
+    padding-bottom: 64px;
+    gap: 40px;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+
   .hero-headline {
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .hero-br {
-    display: none;
+  .hero-scheduler-wrap {
+    position: static;
   }
 
-  .hero-ctas {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-ctas .btn {
+  .hero-explore-btn {
     width: 100%;
     justify-content: center;
     max-width: 340px;

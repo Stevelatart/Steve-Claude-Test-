@@ -44,36 +44,102 @@
 
     <!-- HERO -->
     <section class="hero" id="home" aria-labelledby="hero-heading">
-      <div class="hero-texture" aria-hidden="true"></div>
-      <div class="container hero-inner">
-        <p class="eyebrow">Minnesota's Flooring Experts</p>
-        <h1 class="hero-headline" id="hero-heading">Beautiful Floors Start<br class="hero-br"> With a Free Estimate</h1>
-        <p class="lead hero-lead">651 Carpets+ installs carpet, hardwood, LVP, and tile throughout the Twin Cities metro. Same-week appointments available.</p>
 
-        <div class="hero-ctas">
-          <a href="#booking" class="btn btn-orange btn-lg btn-pill">Schedule Free Estimate</a>
-          <a href="#gallery" class="btn btn-outline-white btn-lg btn-pill">View Our Work</a>
+      <!-- Slideshow background (left/full panel) -->
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide active" style="background-image:url('images/hero-5.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-3.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-4.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-2.jpg')"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+
+      <!-- Slide dots -->
+      <div class="hero-dots" aria-label="Image slideshow controls">
+        <button class="hero-dot active" data-slide="0" aria-label="Show image 1"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Show image 2"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Show image 3"></button>
+        <button class="hero-dot" data-slide="3" aria-label="Show image 4"></button>
+        <button class="hero-dot" data-slide="4" aria-label="Show image 5"></button>
+      </div>
+
+      <!-- Hero content split: left copy | right sticky scheduler -->
+      <div class="hero-split">
+
+        <!-- LEFT: Headline + trust -->
+        <div class="hero-content">
+          <p class="eyebrow">Minnesota's Flooring Experts</p>
+          <h1 class="hero-headline" id="hero-heading">Beautiful Floors<br>Start With a<br>Free Estimate</h1>
+          <p class="lead hero-lead">651 Carpets+ installs carpet, hardwood, LVP, and tile throughout the Twin Cities metro. Same-week appointments available.</p>
+          <a href="#services" class="btn btn-outline-white btn-lg btn-pill hero-explore-btn">Explore Our Work</a>
+
+          <ul class="trust-badges" aria-label="Trust indicators">
+            <li class="trust-badge">
+              <span class="trust-icon" aria-hidden="true">⭐</span>
+              <span>4.9 Rating</span>
+            </li>
+            <li class="trust-badge">
+              <span class="trust-icon" aria-hidden="true">🏠</span>
+              <span>1,200+ Installs</span>
+            </li>
+            <li class="trust-badge">
+              <span class="trust-icon" aria-hidden="true">📅</span>
+              <span>Same-Week Estimates</span>
+            </li>
+            <li class="trust-badge">
+              <span class="trust-icon" aria-hidden="true">✅</span>
+              <span>Licensed &amp; Insured</span>
+            </li>
+          </ul>
         </div>
 
-        <ul class="trust-badges" aria-label="Trust indicators">
-          <li class="trust-badge">
-            <span class="trust-icon" aria-hidden="true">⭐</span>
-            <span>4.9 Rating</span>
-          </li>
-          <li class="trust-badge">
-            <span class="trust-icon" aria-hidden="true">🏠</span>
-            <span>1,200+ Installs</span>
-          </li>
-          <li class="trust-badge">
-            <span class="trust-icon" aria-hidden="true">📅</span>
-            <span>Same-Week Estimates</span>
-          </li>
-          <li class="trust-badge">
-            <span class="trust-icon" aria-hidden="true">✅</span>
-            <span>Licensed &amp; Insured</span>
-          </li>
-        </ul>
-      </div>
+        <!-- RIGHT: Sticky scheduler card -->
+        <div class="hero-scheduler-wrap">
+          <div class="hero-scheduler" id="hero-scheduler">
+            <div class="scheduler-header">
+              <p class="scheduler-eyebrow">Free · No Obligation</p>
+              <h2 class="scheduler-title">Book Your Free Estimate</h2>
+              <p class="scheduler-sub">We come to you. Same-week available.</p>
+            </div>
+
+            <form class="scheduler-form" id="hero-form" novalidate aria-label="Schedule a free estimate">
+              <div class="sform-group">
+                <label for="h-name" class="sform-label">Your Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="h-name" name="name" class="sform-input" placeholder="Jane Smith" required autocomplete="name" />
+              </div>
+              <div class="sform-group">
+                <label for="h-phone" class="sform-label">Phone Number <span aria-hidden="true">*</span></label>
+                <input type="tel" id="h-phone" name="phone" class="sform-input" placeholder="(651) 555-0000" required autocomplete="tel" />
+              </div>
+              <div class="sform-group">
+                <label for="h-service" class="sform-label">Flooring Type <span aria-hidden="true">*</span></label>
+                <select id="h-service" name="service" class="sform-input sform-select" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="carpet">Carpet</option>
+                  <option value="hardwood">Hardwood</option>
+                  <option value="lvp">Luxury Vinyl Plank (LVP)</option>
+                  <option value="tile">Tile &amp; Stone</option>
+                  <option value="unsure">Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="sform-group">
+                <label for="h-date" class="sform-label">Preferred Date</label>
+                <input type="date" id="h-date" name="date" class="sform-input" />
+              </div>
+              <button type="submit" class="btn btn-orange sform-submit">
+                Request My Free Estimate →
+              </button>
+              <div class="sform-success" id="hero-form-success" role="alert" aria-live="polite" hidden>
+                ✅ Thanks! We'll call you within 2 hours to confirm.
+              </div>
+            </form>
+
+            <p class="scheduler-phone">Or call <a href="tel:6515550182">(651) 555-0182</a><br><span>Mon–Sat 8am–6pm</span></p>
+          </div>
+        </div>
+
+      </div><!-- /hero-split -->
     </section>
 
     <!-- SERVICES -->
