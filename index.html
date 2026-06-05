@@ -3,269 +3,406 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trika Rod Comparison</title>
+  <title>651 Carpets+ | Minnesota's Flooring Experts | Free Estimates</title>
+  <meta name="description" content="651 Carpets+ installs carpet, hardwood, LVP, and tile throughout the Twin Cities metro. Schedule a free, no-pressure estimate today. Same-week appointments available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="logo">
-        <span class="logo-trika">TRIK<span class="logo-arrow">&#9658;</span>A</span>
-      </div>
-      <nav>
-        <a href="#">Rods</a>
-        <a href="#">Reels</a>
-        <a href="#">Accessories</a>
-        <a href="#" class="btn-nav">Shop Now</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#home" class="wordmark" aria-label="651 Carpets+ — go to homepage">
+        <span class="wm-651">651</span><span class="wm-carpets">Carpets</span><span class="wm-plus">+</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
       </nav>
+
+      <a href="#booking" class="btn btn-orange btn-pill nav-cta" aria-label="Schedule a free flooring estimate">
+        Schedule Free Estimate
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Rod Comparison</h1>
-        <p class="hero-sub">Find the perfect rod for your fishing style. All Trika rods are on average <strong>MORE SENSITIVE</strong> than competitors' high-end rods.</p>
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-texture" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">Minnesota's Flooring Experts</p>
+        <h1 class="hero-headline" id="hero-heading">Beautiful Floors Start<br class="hero-br"> With a Free Estimate</h1>
+        <p class="lead hero-lead">651 Carpets+ installs carpet, hardwood, LVP, and tile throughout the Twin Cities metro. Same-week appointments available.</p>
+
+        <div class="hero-ctas">
+          <a href="#booking" class="btn btn-orange btn-lg btn-pill">Schedule Free Estimate</a>
+          <a href="#gallery" class="btn btn-outline-white btn-lg btn-pill">View Our Work</a>
+        </div>
+
+        <ul class="trust-badges" aria-label="Trust indicators">
+          <li class="trust-badge">
+            <span class="trust-icon" aria-hidden="true">⭐</span>
+            <span>4.9 Rating</span>
+          </li>
+          <li class="trust-badge">
+            <span class="trust-icon" aria-hidden="true">🏠</span>
+            <span>1,200+ Installs</span>
+          </li>
+          <li class="trust-badge">
+            <span class="trust-icon" aria-hidden="true">📅</span>
+            <span>Same-Week Estimates</span>
+          </li>
+          <li class="trust-badge">
+            <span class="trust-icon" aria-hidden="true">✅</span>
+            <span>Licensed &amp; Insured</span>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="comparison-section">
+    <!-- SERVICES -->
+    <section class="services-section section-pad" id="services" aria-labelledby="services-heading">
       <div class="container">
-        <!-- Mobile series selector -->
-        <div class="mobile-tabs" role="tablist" aria-label="Rod series">
-          <button class="tab-btn active" data-series="10X" role="tab">10X</button>
-          <button class="tab-btn" data-series="6X" role="tab">6X</button>
-          <button class="tab-btn" data-series="3X" role="tab">3X</button>
-          <button class="tab-btn" data-series="X" role="tab">X</button>
+        <div class="section-header animate-on-scroll">
+          <p class="eyebrow">What We Install</p>
+          <h2 id="services-heading">Flooring for Every Room &amp; Style</h2>
         </div>
+        <div class="services-grid">
 
-        <div class="table-wrapper">
-          <table class="comparison-table" aria-label="Trika rod feature comparison">
-            <thead>
-              <tr>
-                <th class="feature-col" scope="col">Features</th>
-                <th class="series-col" data-series="10X" scope="col">
-                  <div class="series-header best-value">
-                    <span class="badge">Best</span>
-                    <span class="series-name">10X</span>
-                    <span class="series-price">$399</span>
-                    <span class="series-sensitivity">133% More Sensitive*</span>
-                    <a href="#" class="btn-buy" aria-label="Buy 10X rod for $399">Add to Cart</a>
-                  </div>
-                </th>
-                <th class="series-col" data-series="6X" scope="col">
-                  <div class="series-header">
-                    <span class="series-name">6X</span>
-                    <span class="series-price">$299</span>
-                    <span class="series-sensitivity">100% More Sensitive*</span>
-                    <a href="#" class="btn-buy" aria-label="Buy 6X rod for $299">Add to Cart</a>
-                  </div>
-                </th>
-                <th class="series-col" data-series="3X" scope="col">
-                  <div class="series-header">
-                    <span class="series-name">3X</span>
-                    <span class="series-price">$199</span>
-                    <span class="series-sensitivity">50% More Sensitive*</span>
-                    <a href="#" class="btn-buy" aria-label="Buy 3X rod for $199">Add to Cart</a>
-                  </div>
-                </th>
-                <th class="series-col" data-series="X" scope="col">
-                  <div class="series-header">
-                    <span class="series-name">X</span>
-                    <span class="series-price">$149</span>
-                    <span class="series-sensitivity">25% More Sensitive*</span>
-                    <a href="#" class="btn-buy" aria-label="Buy X rod for $149">Add to Cart</a>
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="category-row">
-                <td colspan="5" class="category-label">Core Construction</td>
-              </tr>
-              <tr>
-                <td class="feature-name">100% Carbon Blank</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="3X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="X"><span class="dot" aria-label="Included"></span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Nano Resin</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="3X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="X"><span class="dot" aria-label="Included"></span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Axial-Weave Process</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="3X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="X"><span class="dot" aria-label="Included"></span></td>
-              </tr>
+          <article class="service-card animate-on-scroll" aria-label="Carpet Installation service">
+            <div class="service-card-accent" aria-hidden="true"></div>
+            <div class="service-icon" aria-hidden="true">🛋️</div>
+            <h3 class="service-name">Carpet Installation</h3>
+            <p class="service-desc">Plush, berber, frieze, and more — warmth and comfort for bedrooms, basements, and living spaces.</p>
+            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
+          </article>
 
-              <tr class="category-row">
-                <td colspan="5" class="category-label">Components</td>
-              </tr>
-              <tr>
-                <td class="feature-name">Trika Carbon Reel Seat</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="3X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Trika Carbon Grips</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="3X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Premium Guides</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="3X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
+          <article class="service-card animate-on-scroll" aria-label="Hardwood Flooring service">
+            <div class="service-card-accent" aria-hidden="true"></div>
+            <div class="service-icon" aria-hidden="true">🪵</div>
+            <h3 class="service-name">Hardwood Flooring</h3>
+            <p class="service-desc">Solid and engineered hardwood that adds lasting value and timeless beauty to any home.</p>
+            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
+          </article>
 
-              <tr class="category-row">
-                <td colspan="5" class="category-label">Premium Materials</td>
-              </tr>
-              <tr>
-                <td class="feature-name">TORAY HP Carbons</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="3X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Trika Ekko Chamber</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="3X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Titanium Tip</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td class="check" data-series="6X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="3X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
+          <article class="service-card animate-on-scroll" aria-label="Luxury Vinyl Plank service">
+            <div class="service-card-accent" aria-hidden="true"></div>
+            <div class="service-icon" aria-hidden="true">💧</div>
+            <h3 class="service-name">Luxury Vinyl Plank</h3>
+            <p class="service-desc">Waterproof, durable, and stunning — perfect for kitchens, bathrooms, and high-traffic areas.</p>
+            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
+          </article>
 
-              <tr class="category-row">
-                <td colspan="5" class="category-label">Elite-Only Features</td>
-              </tr>
-              <tr>
-                <td class="feature-name">TORAY Elite Carbons</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="6X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="3X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Titanium Frames</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="6X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="3X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Silicon Nitride Inserts</td>
-                <td class="check" data-series="10X"><span class="dot" aria-label="Included"></span></td>
-                <td data-series="6X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="3X"><span class="dash" aria-label="Not included">—</span></td>
-                <td data-series="X"><span class="dash" aria-label="Not included">—</span></td>
-              </tr>
+          <article class="service-card animate-on-scroll" aria-label="Tile and Stone service">
+            <div class="service-card-accent" aria-hidden="true"></div>
+            <div class="service-icon" aria-hidden="true">🔲</div>
+            <h3 class="service-name">Tile &amp; Stone</h3>
+            <p class="service-desc">Porcelain, ceramic, and natural stone for kitchens, bathrooms, entryways, and beyond.</p>
+            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
+          </article>
 
-              <!-- CTA repeat row -->
-              <tr class="cta-row">
-                <td class="feature-name"></td>
-                <td data-series="10X"><a href="#" class="btn-buy" aria-label="Buy 10X rod">Add to Cart</a></td>
-                <td data-series="6X"><a href="#" class="btn-buy" aria-label="Buy 6X rod">Add to Cart</a></td>
-                <td data-series="3X"><a href="#" class="btn-buy" aria-label="Buy 3X rod">Add to Cart</a></td>
-                <td data-series="X"><a href="#" class="btn-buy btn-secondary" aria-label="Buy X rod">Add to Cart</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="disclaimer">*On average MORE SENSITIVE than competitors' high-end rods</p>
-      </div>
-    </section>
-
-    <!-- Sensitivity bar chart -->
-    <section class="sensitivity-section">
-      <div class="container">
-        <h2>Sensitivity Advantage</h2>
-        <p class="section-sub">Compared to competitors' high-end rods</p>
-        <div class="bars">
-          <div class="bar-group">
-            <div class="bar-label">10X</div>
-            <div class="bar-track"><div class="bar-fill" style="--pct: 100%" data-pct="133%">133%</div></div>
-            <div class="bar-price">$399</div>
-          </div>
-          <div class="bar-group">
-            <div class="bar-label">6X</div>
-            <div class="bar-track"><div class="bar-fill" style="--pct: 75%" data-pct="100%">100%</div></div>
-            <div class="bar-price">$299</div>
-          </div>
-          <div class="bar-group">
-            <div class="bar-label">3X</div>
-            <div class="bar-track"><div class="bar-fill" style="--pct: 38%" data-pct="50%">50%</div></div>
-            <div class="bar-price">$199</div>
-          </div>
-          <div class="bar-group">
-            <div class="bar-label">X</div>
-            <div class="bar-track"><div class="bar-fill" style="--pct: 19%" data-pct="25%">25%</div></div>
-            <div class="bar-price">$149</div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Feature count cards -->
-    <section class="cards-section">
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works section-pad" id="process" aria-labelledby="process-heading">
       <div class="container">
-        <h2>At a Glance</h2>
-        <div class="cards">
-          <div class="rod-card best">
-            <div class="card-badge">Most Features</div>
-            <div class="card-series">10X</div>
-            <div class="card-price">$399</div>
-            <div class="card-features">12 features</div>
-            <a href="#" class="btn-buy">Shop 10X</a>
+        <div class="section-header animate-on-scroll">
+          <p class="eyebrow">Simple Process</p>
+          <h2 id="process-heading">From Estimate to Beautiful Floors in 3 Steps</h2>
+        </div>
+        <div class="steps-grid">
+
+          <div class="step animate-on-scroll">
+            <div class="step-number" aria-hidden="true">01</div>
+            <h3 class="step-title">Book a Free Estimate</h3>
+            <p class="step-desc">Pick a time online or by phone. We come to you — no showroom visit required.</p>
           </div>
-          <div class="rod-card">
-            <div class="card-series">6X</div>
-            <div class="card-price">$299</div>
-            <div class="card-features">9 features</div>
-            <a href="#" class="btn-buy">Shop 6X</a>
+
+          <div class="step animate-on-scroll">
+            <div class="step-number" aria-hidden="true">02</div>
+            <h3 class="step-title">Choose Your Flooring</h3>
+            <p class="step-desc">Our expert brings samples to your home, measures every room, and gives you a written quote on-site.</p>
           </div>
-          <div class="rod-card">
-            <div class="card-series">3X</div>
-            <div class="card-price">$199</div>
-            <div class="card-features">6 features</div>
-            <a href="#" class="btn-buy">Shop 3X</a>
+
+          <div class="step animate-on-scroll">
+            <div class="step-number" aria-hidden="true">03</div>
+            <h3 class="step-title">We Install, You Love It</h3>
+            <p class="step-desc">Professional installation by certified crews. Full cleanup included. Backed by our 5-year workmanship guarantee.</p>
           </div>
-          <div class="rod-card">
-            <div class="card-series">X</div>
-            <div class="card-price">$149</div>
-            <div class="card-features">3 features</div>
-            <a href="#" class="btn-buy btn-secondary">Shop X</a>
+
+        </div>
+        <div class="process-cta animate-on-scroll">
+          <a href="#booking" class="btn btn-orange btn-lg btn-pill">Start With a Free Estimate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us section-pad" id="about" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="eyebrow">The 651 Difference</p>
+          <h2 id="why-heading">Why Twin Cities Homeowners Choose Us</h2>
+        </div>
+        <div class="benefits-grid">
+
+          <div class="benefit animate-on-scroll">
+            <div class="benefit-icon" aria-hidden="true">💰</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">Factory-Direct Pricing</h3>
+              <p class="benefit-desc">No showroom markup. We source direct and pass every dollar of savings straight to you.</p>
+            </div>
+          </div>
+
+          <div class="benefit animate-on-scroll">
+            <div class="benefit-icon" aria-hidden="true">📅</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">Same-Week Appointments</h3>
+              <p class="benefit-desc">Busy schedules welcome. We work around your availability, including Saturdays.</p>
+            </div>
+          </div>
+
+          <div class="benefit animate-on-scroll">
+            <div class="benefit-icon" aria-hidden="true">🏆</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">Expert Installation Team</h3>
+              <p class="benefit-desc">Certified installers with an average of 10+ years of hands-on flooring experience.</p>
+            </div>
+          </div>
+
+          <div class="benefit animate-on-scroll">
+            <div class="benefit-icon" aria-hidden="true">🛡️</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">5-Year Workmanship Warranty</h3>
+              <p class="benefit-desc">We stand behind every install. If something isn't right, we make it right — guaranteed.</p>
+            </div>
+          </div>
+
+          <div class="benefit animate-on-scroll">
+            <div class="benefit-icon" aria-hidden="true">🧹</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">Full Cleanup Included</h3>
+              <p class="benefit-desc">We haul away your old flooring and leave your home spotless. No extra fees, no mess.</p>
+            </div>
+          </div>
+
+          <div class="benefit animate-on-scroll">
+            <div class="benefit-icon" aria-hidden="true">🏡</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">Local, Family-Owned</h3>
+              <p class="benefit-desc">Proudly serving the Twin Cities since 2003. Your neighbors trust us — and so can you.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials section-pad" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="eyebrow">What Homeowners Say</p>
+          <h2 id="reviews-heading">Trusted by 1,200+ Twin Cities Families</h2>
+        </div>
+        <div class="testimonials-grid">
+
+          <blockquote class="testimonial-card animate-on-scroll">
+            <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-quote">"651 Carpets came out the same week I called. The LVP they installed looks incredible — I've already recommended them to three neighbors."</p>
+            <footer class="testimonial-author">
+              <strong>Sarah K.</strong>
+              <span>Eagan, MN</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card animate-on-scroll">
+            <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-quote">"Fair price, zero pressure, beautiful carpet. The crew was professional and cleaned up everything. Couldn't be happier with how it turned out."</p>
+            <footer class="testimonial-author">
+              <strong>Mark T.</strong>
+              <span>Woodbury, MN</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card animate-on-scroll">
+            <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-quote">"We did our entire main floor — hardwood in the living room, tile in the kitchen. Flawless work from start to finish. Booking was super easy."</p>
+            <footer class="testimonial-author">
+              <strong>Jennifer R.</strong>
+              <span>Apple Valley, MN</span>
+            </footer>
+          </blockquote>
+
+        </div>
+
+        <div class="google-badge animate-on-scroll" aria-label="Google Reviews — 4.9 stars, 200-plus reviews">
+          <div class="google-badge-inner">
+            <div class="google-g" aria-hidden="true">G</div>
+            <div class="google-badge-text">
+              <strong>4.9 ★ on Google</strong>
+              <span>200+ Verified Reviews</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking-section section-pad" id="booking" aria-labelledby="booking-heading">
+      <div class="container booking-inner">
+
+        <div class="booking-copy animate-on-scroll">
+          <p class="eyebrow eyebrow-light">Get Started Today</p>
+          <h2 id="booking-heading" class="booking-headline">Schedule Your Free,<br>No-Pressure Estimate</h2>
+          <p class="booking-body">We'll come to your home, measure, bring samples, and give you a written quote — all for free. No obligation, ever.</p>
+          <a href="#booking-form" class="btn btn-orange btn-lg btn-pill booking-hero-btn">
+            Book My Free Estimate
+          </a>
+          <p class="booking-phone-note">Or call us at <a href="tel:6515550182" class="phone-link">(651) 555-0182</a> &middot; Mon–Sat 8am–6pm</p>
+        </div>
+
+        <div class="booking-form-wrap animate-on-scroll" id="gallery">
+          <form class="booking-form" id="booking-form" novalidate aria-label="Request a free flooring estimate">
+            <h3 class="form-title">Request My Free Estimate</h3>
+            <p class="form-subtitle">We'll confirm your appointment within 2 hours.</p>
+
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Jane Smith"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="(651) 555-0000"
+                required
+                autocomplete="tel"
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="service" class="form-label">Service Interested In <span class="required" aria-hidden="true">*</span></label>
+              <select id="service" name="service" class="form-input form-select" required aria-required="true">
+                <option value="" disabled selected>Select a service…</option>
+                <option value="carpet">Carpet Installation</option>
+                <option value="hardwood">Hardwood Flooring</option>
+                <option value="lvp">Luxury Vinyl Plank (LVP)</option>
+                <option value="tile">Tile &amp; Stone</option>
+                <option value="unsure">Not Sure Yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferred-date" class="form-label">Preferred Date</label>
+              <input
+                type="date"
+                id="preferred-date"
+                name="preferred-date"
+                class="form-input"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-orange btn-lg form-submit">
+              Request My Estimate <span aria-hidden="true">→</span>
+            </button>
+
+            <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+              <span class="success-icon" aria-hidden="true">✅</span>
+              Thanks! We'll call you within 2 hours to confirm.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <span class="logo-trika footer-logo">TRIK<span class="logo-arrow">&#9658;</span>A</span>
-      <p>&copy; 2026 Trika Fishing. All rights reserved.</p>
-      <p class="disclaimer">*On average MORE SENSITIVE than competitors' high-end rods</p>
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="#home" class="wordmark" aria-label="651 Carpets+ — back to top">
+          <span class="wm-651">651</span><span class="wm-carpets">Carpets</span><span class="wm-plus">+</span>
+        </a>
+        <p class="footer-tagline">Minnesota's Flooring Experts</p>
+        <p class="footer-blurb">Family-owned. Factory-direct. Serving the Twin Cities metro with expert flooring since 2003.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h4 class="footer-nav-heading">Navigate</h4>
+        <ul class="footer-nav-list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#booking">Get an Estimate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4 class="footer-nav-heading">Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <span aria-hidden="true">📞</span>
+            <a href="tel:6515550182">(651) 555-0182</a>
+          </li>
+          <li>
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:hello@651carpets.com">hello@651carpets.com</a>
+          </li>
+          <li>
+            <span aria-hidden="true">📍</span>
+            <span>Twin Cities Metro Area, MN</span>
+          </li>
+          <li>
+            <span aria-hidden="true">🕐</span>
+            <span>Mon–Sat 8am–6pm</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2024 651 Carpets+. All rights reserved.</p>
+        <p>Licensed &amp; Insured &middot; MN Contractor License #BC123456</p>
+      </div>
     </div>
   </footer>
 

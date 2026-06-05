@@ -1,75 +1,182 @@
 'use strict';
 
-// ── Mobile tab switching ──────────────────────────────────────────────────────
-const tabs = document.querySelectorAll('.tab-btn');
-const allSeriesCells = document.querySelectorAll('[data-series]');
+/* ============================================================
+   651 Carpets+ — app.js
+   - Sticky header shadow on scroll
+   - Mobile nav hamburger toggle
+   - Smooth scroll for nav anchor links
+   - IntersectionObserver fade-in animations
+   - Form submission handler with success message
+   ============================================================ */
 
-function showSeries(series) {
-  // Hide all series columns
-  allSeriesCells.forEach(el => {
-    if (el.dataset.series) el.classList.remove('visible');
-  });
+(function () {
 
-  // Show only the selected series
-  document.querySelectorAll(`[data-series="${series}"]`).forEach(el => {
-    el.classList.add('visible');
-  });
+  /* ── Sticky header shadow ──────────────────────────────────── */
+  const header = document.getElementById('site-header');
 
-  // Update active tab
-  tabs.forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.series === series);
-    btn.setAttribute('aria-selected', btn.dataset.series === series);
-  });
-}
+  if (header) {
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
 
-tabs.forEach(btn => {
-  btn.addEventListener('click', () => showSeries(btn.dataset.series));
-});
-
-// On mobile, show the first series by default
-function handleResize() {
-  if (window.innerWidth <= 768) {
-    const active = document.querySelector('.tab-btn.active');
-    if (active) showSeries(active.dataset.series);
-  } else {
-    // Desktop: show all columns
-    allSeriesCells.forEach(el => el.classList.remove('visible'));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Run on init in case page loads mid-scroll
+    onScroll();
   }
-}
 
-window.addEventListener('resize', handleResize);
-handleResize();
 
-// ── Animate bars on scroll ────────────────────────────────────────────────────
-if ('IntersectionObserver' in window) {
-  const bars = document.querySelectorAll('.bar-fill');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-        observer.unobserve(entry.target);
+  /* ── Mobile hamburger nav toggle ───────────────────────────── */
+  const hamburger = document.getElementById('hamburger');
+  const mainNav   = document.getElementById('main-nav');
+
+  if (hamburger && mainNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.setAttribute(
+        'aria-label',
+        isOpen ? 'Close navigation menu' : 'Open navigation menu'
+      );
+    });
+
+    // Close nav when a link is clicked (smooth scroll takes over)
+    mainNav.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+
+    // Close nav on outside click
+    document.addEventListener('click', (e) => {
+      if (!header.contains(e.target)) {
+        mainNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open navigation menu');
       }
     });
-  }, { threshold: 0.3 });
+  }
 
-  bars.forEach(bar => {
-    bar.style.animationPlayState = 'paused';
-    observer.observe(bar);
+
+  /* ── Smooth scroll for all in-page anchor links ────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth',
+      });
+    });
   });
-}
 
-// ── Smooth "Add to Cart" feedback ────────────────────────────────────────────
-document.querySelectorAll('.btn-buy').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
 
-    const original = btn.textContent;
-    btn.textContent = 'Added!';
-    btn.style.background = '#28a745';
+  /* ── IntersectionObserver — fade-in on scroll ──────────────── */
+  const animateEls = document.querySelectorAll('.animate-on-scroll');
 
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = '';
-    }, 1500);
-  });
-});
+  if ('IntersectionObserver' in window && animateEls.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    animateEls.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback: show all immediately if IO not supported
+    animateEls.forEach((el) => el.classList.add('visible'));
+  }
+
+
+  /* ── Booking form submission handler ───────────────────────── */
+  const form        = document.getElementById('booking-form');
+  const successMsg  = document.getElementById('form-success');
+
+  if (form && successMsg) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Basic validation
+      const name    = form.querySelector('#name');
+      const phone   = form.querySelector('#phone');
+      const service = form.querySelector('#service');
+      let valid = true;
+
+      [name, phone, service].forEach((field) => {
+        if (!field) return;
+        const isEmpty = !field.value.trim();
+        field.style.borderColor = isEmpty ? 'var(--error)' : '';
+        if (isEmpty) valid = false;
+      });
+
+      if (!valid) {
+        // Scroll to first error field
+        const firstInvalid = form.querySelector('[style*="--error"]');
+        if (firstInvalid) {
+          firstInvalid.focus();
+        }
+        return;
+      }
+
+      // Simulate submission — show success message
+      const submitBtn = form.querySelector('.form-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      // Short delay to feel like a real request
+      setTimeout(() => {
+        // Hide submit button, show success
+        if (submitBtn) submitBtn.style.display = 'none';
+        successMsg.hidden = false;
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        // Reset form fields
+        form.reset();
+      }, 800);
+    });
+
+    // Clear error styling on input
+    form.querySelectorAll('.form-input').forEach((field) => {
+      field.addEventListener('input', () => {
+        field.style.borderColor = '';
+      });
+    });
+  }
+
+
+  /* ── Set minimum date on date picker ───────────────────────── */
+  const datePicker = document.getElementById('preferred-date');
+  if (datePicker) {
+    const today = new Date().toISOString().split('T')[0];
+    datePicker.setAttribute('min', today);
+  }
+
+})();
