@@ -270,4 +270,79 @@
   /* Init all calendar widgets */
   document.querySelectorAll('[data-calendar]').forEach(el => new BookingCalendar(el));
 
+  /* ── Hero Mini Calendar ── */
+  (function () {
+    const container = document.getElementById('hero-mini-cal');
+    const label = document.getElementById('hero-sched-label');
+    const btn = document.getElementById('hero-sched-btn');
+    if (!container) return;
+
+    const today = new Date(); today.setHours(0,0,0,0);
+    let viewMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+
+    function isAvail(d) {
+      if (d < today) return false;
+      const day = d.getDay();
+      return day >= 1 && day <= 6;
+    }
+
+    function render() {
+      const y = viewMonth.getFullYear();
+      const m = viewMonth.getMonth();
+      const name = viewMonth.toLocaleString('default', { month: 'long' });
+      const firstDay = new Date(y, m, 1).getDay();
+      const days = new Date(y, m + 1, 0).getDate();
+      const prevOk = new Date(y, m, 1) > new Date(today.getFullYear(), today.getMonth(), 1);
+
+      let h = `<div class="cal-header">
+        <button class="cal-nav" id="hcp" ${prevOk ? '' : 'disabled style="opacity:.3;cursor:not-allowed"'}>&#8249;</button>
+        <span class="cal-month-title">${name} ${y}</span>
+        <button class="cal-nav" id="hcn">&#8250;</button>
+      </div><div class="cal-grid">
+        ${['Su','Mo','Tu','We','Th','Fr','Sa'].map(d => `<div class="cal-day-label">${d}</div>`).join('')}`;
+
+      for (let i = 0; i < firstDay; i++) h += '<div class="cal-cell empty"></div>';
+      for (let d = 1; d <= days; d++) {
+        const date = new Date(y, m, d);
+        const avail = isAvail(date);
+        const sel = selectedDate && date.toDateString() === selectedDate.toDateString();
+        const tod = date.toDateString() === today.toDateString();
+        let cls = 'cal-cell';
+        if (!avail) cls += ' disabled';
+        else cls += ' available';
+        if (sel) cls += ' selected';
+        if (tod && !sel) cls += ' today';
+        h += `<div class="${cls}" data-ts="${date.getTime()}">${d}</div>`;
+      }
+      h += '</div>';
+      container.innerHTML = h;
+
+      const cp = container.querySelector('#hcp');
+      const cn = container.querySelector('#hcn');
+      if (cp) cp.addEventListener('click', () => {
+        const prev = new Date(viewMonth.getFullYear(), viewMonth.getMonth() - 1, 1);
+        if (prev >= new Date(today.getFullYear(), today.getMonth(), 1)) {
+          viewMonth = prev; render();
+        }
+      });
+      if (cn) cn.addEventListener('click', () => {
+        viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth() + 1, 1);
+        render();
+      });
+      container.querySelectorAll('.cal-cell.available').forEach(c => {
+        c.addEventListener('click', () => {
+          selectedDate = new Date(Number(c.dataset.ts));
+          const fmt = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+          label.textContent = '\u{1F4C5} ' + fmt;
+          label.style.display = 'block';
+          btn.style.display = 'flex';
+          render();
+        });
+      });
+    }
+
+    render();
+  })();
+
 })();
