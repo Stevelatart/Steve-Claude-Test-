@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Service Area | 651 Carpets+ | Minnesota &amp; Western Wisconsin</title>
+  <meta name="description" content="651 Carpets+ serves the Twin Cities metro, Rochester, St. Cloud, and Western Wisconsin. See our full service area and schedule a free in-home flooring estimate."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ── Service Area Page Styles ─────────────────────────────── */
+    .sa-hero {
+      background: var(--navy-900);
+      padding: clamp(80px,12vw,140px) 0 clamp(56px,8vw,88px);
+      margin-top: var(--header-h);
+      text-align: center;
+    }
+    .sa-hero .eyebrow { color: var(--orange); margin-bottom: 14px; }
+    .sa-hero h1 {
+      color: #fff;
+      font-size: clamp(2.2rem,5vw,3.6rem);
+      font-weight: 900;
+      letter-spacing: -.03em;
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+    .sa-hero p.lead {
+      color: rgba(255,255,255,.68);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.72;
+    }
+
+    /* ── Map + Cards two-column layout ───────────────────────── */
+    .sa-map-section { background: var(--navy-800); padding: clamp(56px,8vw,96px) 0; }
+    .sa-map-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .sa-svg-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-xl);
+    }
+    .sa-svg-wrap svg { display: block; width: 100%; height: auto; }
+
+    /* SVG interaction */
+    .sa-cov { fill: var(--orange); opacity: 0.18; cursor: pointer; transition: opacity 0.2s; }
+    .sa-cov:hover { opacity: 0.35; }
+    .sa-cov.active { opacity: 0.45; }
+    .sa-dot { fill: #fff; stroke: var(--orange); stroke-width: 2; cursor: pointer; transition: all 0.2s; }
+    .sa-dot.active { fill: var(--orange); }
+    .sa-city-label { fill: rgba(255,255,255,0.8); font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; pointer-events: none; }
+
+    /* ── Info Cards panel ─────────────────────────────────────── */
+    .sa-cards-panel { display: flex; flex-direction: column; gap: 14px; }
+    .sa-info-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--line);
+      border-left: 4px solid transparent;
+      padding: 20px 22px;
+      cursor: pointer;
+      transition: all var(--base) var(--ease);
+      position: relative;
+    }
+    .sa-info-card:hover { border-color: var(--navy-100); border-left-color: var(--navy-300); box-shadow: var(--shadow-sm); transform: translateX(2px); }
+    .sa-info-card.active { border-color: var(--orange-light); border-left-color: var(--orange); box-shadow: var(--shadow-md); }
+    .sa-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .sa-card-title { font-size: 1rem; font-weight: 800; color: var(--text-strong); line-height: 1.2; }
+    .sa-card-tag {
+      display: inline-block; font-size: .7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      background: var(--orange-tint); color: var(--orange);
+      padding: 3px 10px; border-radius: var(--radius-pill);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .sa-info-card.active .sa-card-tag { background: var(--orange); color: #fff; }
+    .sa-card-subtitle { font-size: .78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; }
+    .sa-card-cities { font-size: .82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+    .sa-card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .82rem; font-weight: 700; color: var(--orange);
+      transition: gap var(--fast);
+    }
+    .sa-card-link:hover { gap: 10px; }
+    .sa-card-link::after { content: '→'; }
+
+    /* ── Area Grid (4-card link grid below map) ─────────────── */
+    .sa-grid-section { background: var(--ice); padding: clamp(56px,8vw,96px) 0; }
+    .sa-area-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 40px; }
+    .sa-area-link-card {
+      background: #fff; border-radius: var(--radius-lg);
+      border: 1.5px solid var(--line);
+      padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: all var(--base) var(--ease);
+      text-decoration: none;
+    }
+    .sa-area-link-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .sa-alc-icon { font-size: 2rem; line-height: 1; }
+    .sa-alc-tag {
+      display: inline-block; font-size: .7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      background: var(--orange); color: #fff;
+      padding: 3px 10px; border-radius: var(--radius-pill);
+      align-self: flex-start;
+    }
+    .sa-alc-title { font-size: 1rem; font-weight: 800; color: var(--text-strong); line-height: 1.2; }
+    .sa-alc-desc { font-size: .82rem; color: var(--text-muted); line-height: 1.6; }
+    .sa-alc-cta { font-size: .82rem; font-weight: 700; color: var(--orange); margin-top: auto; }
+
+    @media(max-width:1024px){
+      .sa-map-grid { grid-template-columns: 1fr; }
+      .sa-area-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media(max-width:600px){
+      .sa-area-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="wordmark" aria-label="651 Carpets+ Home">
+      <img src="images/651carpets-logo-final1.png" alt="651 Carpets+ Flooring and Countertops"/>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="products-dropdown">
+          <a href="products.html" class="nav-link nav-link-products">Products &#9662;</a>
+          <div class="dropdown-menu">
+            <a href="carpet.html" class="dropdown-item">Carpet</a>
+            <a href="hardwood.html" class="dropdown-item">Hardwood</a>
+            <a href="lvp.html" class="dropdown-item">Luxury Vinyl Plank</a>
+            <a href="laminate.html" class="dropdown-item">Laminate</a>
+            <a href="lvt.html" class="dropdown-item">Luxury Vinyl Tile</a>
+          </div>
+        </li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="service-area.html" class="nav-link active">Service Area</a></li>
+        <li><a href="index.html#schedule" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#schedule" class="btn btn-orange btn-sm nav-cta">Free Estimate</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<section class="sa-hero">
+  <div class="container">
+    <p class="eyebrow reveal">Where We Install</p>
+    <h1 class="reveal reveal-delay-1">Serving Minnesota &amp;<br>Western Wisconsin</h1>
+    <p class="lead reveal reveal-delay-2">651 Carpets+ brings factory-direct flooring and expert installation directly to your door &mdash; across the Twin Cities metro, Rochester, St. Cloud, and into Western Wisconsin.</p>
+  </div>
+</section>
+
+<!-- ── Map + Cards ────────────────────────────────────────────── -->
+<section class="sa-map-section">
+  <div class="container">
+    <div class="sa-map-grid">
+
+      <!-- LEFT: SVG Map -->
+      <div class="sa-svg-wrap reveal">
+        <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Minnesota and Western Wisconsin service area">
+
+          <!-- Background -->
+          <rect width="520" height="520" fill="#081422"/>
+
+          <!-- Minnesota polygon -->
+          <polygon
+            points="45,28 168,28 168,12 210,12 210,28 368,28 405,56 416,100 408,152 392,212 376,268 378,482 55,482"
+            fill="#142843"
+            stroke="rgba(255,255,255,0.15)"
+            stroke-width="1.5"
+          />
+
+          <!-- Western Wisconsin polygon -->
+          <polygon
+            points="376,268 460,268 462,482 378,482"
+            fill="#1B3353"
+            stroke="rgba(255,255,255,0.15)"
+            stroke-width="1.5"
+          />
+
+          <!-- Lake Superior label -->
+          <text x="395" y="145" fill="rgba(255,255,255,0.3)" font-family="'Poppins', sans-serif" font-size="11" font-style="italic" text-anchor="middle">Lake Superior</text>
+
+          <!-- State labels -->
+          <text x="210" y="200" fill="rgba(255,255,255,0.25)" font-family="'Poppins', sans-serif" font-size="22" font-weight="bold" text-anchor="middle">Minnesota</text>
+          <text x="418" y="248" fill="rgba(255,255,255,0.20)" font-family="'Poppins', sans-serif" font-size="11" text-anchor="middle">W. Wisconsin</text>
+
+          <!-- Coverage circles / ellipses (interactive) -->
+          <circle class="sa-cov" data-area="minneapolis" cx="215" cy="388" r="48"/>
+          <circle class="sa-cov" data-area="stcloud" cx="155" cy="308" r="28"/>
+          <circle class="sa-cov" data-area="rochester" cx="258" cy="438" r="26"/>
+          <ellipse class="sa-cov" data-area="western-wi" cx="418" cy="355" rx="30" ry="62"/>
+
+          <!-- City dots (interactive) -->
+          <circle class="sa-dot" data-area="minneapolis" cx="215" cy="388" r="6"/>
+          <circle class="sa-dot" data-area="stcloud" cx="155" cy="308" r="6"/>
+          <circle class="sa-dot" data-area="rochester" cx="258" cy="438" r="6"/>
+          <circle class="sa-dot" data-area="western-wi" cx="418" cy="355" r="6"/>
+
+          <!-- City name labels -->
+          <text class="sa-city-label" x="225" y="382">Minneapolis</text>
+          <text class="sa-city-label" x="225" y="395">/ St. Paul</text>
+          <text class="sa-city-label" x="165" y="303">St. Cloud</text>
+          <text class="sa-city-label" x="268" y="433">Rochester</text>
+          <text class="sa-city-label" x="392" y="350">Western</text>
+          <text class="sa-city-label" x="392" y="363">WI</text>
+        </svg>
+      </div>
+
+      <!-- RIGHT: Info Cards -->
+      <div class="sa-cards-panel reveal reveal-delay-2">
+
+        <!-- Minneapolis card -->
+        <div class="sa-info-card" data-area="minneapolis">
+          <div class="sa-card-header">
+            <div class="sa-card-title">Minneapolis &amp; St. Paul Metro</div>
+            <span class="sa-card-tag">Primary Service Area</span>
+          </div>
+          <div class="sa-card-subtitle">Twin Cities Metro</div>
+          <p class="sa-card-cities">Minneapolis, St. Paul, Eagan, Burnsville, Eden Prairie, Minnetonka, Plymouth, Maple Grove, Blaine, Woodbury, Cottage Grove + surrounding suburbs</p>
+          <a href="service-area-minneapolis.html" class="sa-card-link">View Minneapolis area</a>
+        </div>
+
+        <!-- Rochester card -->
+        <div class="sa-info-card" data-area="rochester">
+          <div class="sa-card-header">
+            <div class="sa-card-title">Rochester, MN</div>
+            <span class="sa-card-tag">Southeast MN</span>
+          </div>
+          <div class="sa-card-subtitle">Rochester &amp; Surroundings</div>
+          <p class="sa-card-cities">Rochester and surrounding communities in southeast Minnesota</p>
+          <a href="service-area-rochester.html" class="sa-card-link">View Rochester area</a>
+        </div>
+
+        <!-- St. Cloud card -->
+        <div class="sa-info-card" data-area="stcloud">
+          <div class="sa-card-header">
+            <div class="sa-card-title">St. Cloud, MN</div>
+            <span class="sa-card-tag">Central MN</span>
+          </div>
+          <div class="sa-card-subtitle">St. Cloud &amp; Central Minnesota</div>
+          <p class="sa-card-cities">St. Cloud, Waite Park, Sartell, Sauk Rapids, St. Joseph</p>
+          <a href="service-area-stcloud.html" class="sa-card-link">View St. Cloud area</a>
+        </div>
+
+        <!-- Western WI card -->
+        <div class="sa-info-card" data-area="western-wi">
+          <div class="sa-card-header">
+            <div class="sa-card-title">Western Wisconsin</div>
+            <span class="sa-card-tag">Western Wisconsin</span>
+          </div>
+          <div class="sa-card-subtitle">Hudson, Eau Claire &amp; Beyond</div>
+          <p class="sa-card-cities">Hudson, River Falls, Eau Claire, Baldwin, New Richmond, Somerset</p>
+          <a href="service-area-western-wi.html" class="sa-card-link">View Western WI area</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Area link grid ────────────────────────────────────────── -->
+<section class="sa-grid-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Explore Your Area</p>
+      <h2>Find Your Local Service Page</h2>
+      <p class="lead">Each area page lists every city we serve, features our full flooring options, and lets you book a free in-home estimate directly.</p>
+    </div>
+    <div class="sa-area-grid">
+
+      <a href="service-area-minneapolis.html" class="sa-area-link-card reveal">
+        <div class="sa-alc-icon">&#127968;</div>
+        <span class="sa-alc-tag">Primary Area</span>
+        <div class="sa-alc-title">Minneapolis &amp; St. Paul Metro</div>
+        <p class="sa-alc-desc">Serving all Twin Cities suburbs &mdash; from Eagan to Maple Grove, Eden Prairie to Woodbury.</p>
+        <span class="sa-alc-cta">Explore Twin Cities &rarr;</span>
+      </a>
+
+      <a href="service-area-rochester.html" class="sa-area-link-card reveal reveal-delay-1">
+        <div class="sa-alc-icon">&#127963;</div>
+        <span class="sa-alc-tag">Southeast MN</span>
+        <div class="sa-alc-title">Rochester, MN</div>
+        <p class="sa-alc-desc">Rochester and surrounding southeast Minnesota communities.</p>
+        <span class="sa-alc-cta">Explore Rochester &rarr;</span>
+      </a>
+
+      <a href="service-area-stcloud.html" class="sa-area-link-card reveal reveal-delay-2">
+        <div class="sa-alc-icon">&#127961;</div>
+        <span class="sa-alc-tag">Central MN</span>
+        <div class="sa-alc-title">St. Cloud, MN</div>
+        <p class="sa-alc-desc">St. Cloud, Sartell, Sauk Rapids, Waite Park, and central Minnesota.</p>
+        <span class="sa-alc-cta">Explore St. Cloud &rarr;</span>
+      </a>
+
+      <a href="service-area-western-wi.html" class="sa-area-link-card reveal reveal-delay-3">
+        <div class="sa-alc-icon">&#127966;</div>
+        <span class="sa-alc-tag">Western Wisconsin</span>
+        <div class="sa-alc-title">Western Wisconsin</div>
+        <p class="sa-alc-desc">Hudson, River Falls, Eau Claire, Baldwin, New Richmond &amp; more.</p>
+        <span class="sa-alc-cta">Explore Western WI &rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────── -->
+<section class="product-cta">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--orange)">Free &middot; No Obligation</p>
+    <h2>Ready for Beautiful New Floors?</h2>
+    <p>We bring 200+ samples to your home and give you a written quote &mdash; completely free. Serving all areas above.</p>
+    <a href="index.html#schedule" class="btn btn-orange btn-lg">Book My Free In-Home Estimate</a>
+    <p class="product-cta-phone">Or call <a href="tel:6515550182">(651) 555-0182</a> &middot; Mon&ndash;Sat 8am&ndash;6pm</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="wordmark footer-wordmark"><img src="images/651carpets-logo-final1.png" alt="651 Carpets+"/></a>
+      <p class="footer-tagline">Minnesota&rsquo;s Flooring Experts</p>
+      <p class="footer-blurb">Family-owned. Factory-direct pricing. Serving the Twin Cities and Western Wisconsin since 2003.</p>
+    </div>
+    <nav aria-label="Products">
+      <h4 class="footer-nav-heading">Products</h4>
+      <ul class="footer-nav-list">
+        <li><a href="carpet.html">Carpet</a></li>
+        <li><a href="hardwood.html">Hardwood</a></li>
+        <li><a href="lvp.html">Luxury Vinyl Plank</a></li>
+        <li><a href="laminate.html">Laminate</a></li>
+        <li><a href="lvt.html">Luxury Vinyl Tile</a></li>
+        <li><a href="products.html">All Products</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Company">
+      <h4 class="footer-nav-heading">Company</h4>
+      <ul class="footer-nav-list">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#commercial">Residential</a></li>
+        <li><a href="index.html#commercial">Commercial</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+        <li><a href="index.html#schedule">Free Estimate</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h4 class="footer-nav-heading">Contact</h4>
+      <ul class="footer-contact-list">
+        <li><span>&#128222;</span><a href="tel:6515550182">(651) 555-0182</a></li>
+        <li><span>&#9993;</span><a href="mailto:hello@651carpets.com">hello@651carpets.com</a></li>
+        <li><span>&#128205;</span><span>Twin Cities &amp; W. Wisconsin</span></li>
+        <li><span>&#128336;</span><span>Mon&ndash;Sat 8am&ndash;6pm</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; 2024 651 Carpets+. All rights reserved.</p>
+      <p>Licensed &amp; Insured &middot; MN Contractor License #BC123456</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  function activateArea(id) {
+    document.querySelectorAll('.sa-cov, .sa-dot').forEach(el => el.classList.toggle('active', el.dataset.area === id));
+    document.querySelectorAll('.sa-info-card').forEach(el => el.classList.toggle('active', el.dataset.area === id));
+  }
+  document.querySelectorAll('.sa-cov, .sa-dot, .sa-info-card').forEach(el => {
+    el.addEventListener('click', () => activateArea(el.dataset.area));
+  });
+  activateArea('minneapolis'); // default
+</script>
+</body>
+</html>
