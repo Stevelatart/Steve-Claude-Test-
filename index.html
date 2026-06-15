@@ -1,477 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>651 Carpets+ | Minnesota's Flooring Experts | Free Estimates</title>
-  <meta name="description" content="651 Carpets+ installs carpet, hardwood, LVP, and tile throughout the Twin Cities metro. Schedule a free, no-pressure estimate today. Same-week appointments available." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>651 Carpets+ | Professional Flooring | Twin Cities &amp; Western Wisconsin</title>
+  <meta name="description" content="651 Carpets+ installs carpet, hardwood, LVP, laminate, tile, and countertops throughout the Twin Cities metro and Western Wisconsin. Schedule a free in-home estimate today."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header" id="site-header" role="banner">
-    <div class="container header-inner">
-      <a href="#home" class="wordmark" aria-label="651 Carpets+ — go to homepage">
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="wordmark" aria-label="651 Carpets+ Home">
+      <span class="wm-651">651</span><span class="wm-carpets">Carpets</span><span class="wm-plus">+</span>
+      <span class="wm-tag">Flooring &amp; Countertops</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="products-dropdown">
+          <a href="#" class="nav-link nav-link-products">Products &#9662;</a>
+          <div class="dropdown-menu">
+            <a href="carpet.html" class="dropdown-item">Carpet</a>
+            <a href="hardwood.html" class="dropdown-item">Hardwood</a>
+            <a href="lvp.html" class="dropdown-item">Luxury Vinyl Plank</a>
+            <a href="laminate.html" class="dropdown-item">Laminate</a>
+            <a href="lvt.html" class="dropdown-item">Luxury Vinyl Tile</a>
+            <a href="countertops.html" class="dropdown-item">Countertops</a>
+          </div>
+        </li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#service-area" class="nav-link">Service Area</a></li>
+        <li><a href="#booking" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#booking" class="btn btn-orange btn-pill nav-cta">Free Estimate</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide active" style="background-image:url('images/hero-5.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero-3.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero-4.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero-1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero-2.jpg')"></div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots">
+    <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+    <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+    <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="hero-split">
+    <div class="hero-content">
+      <p class="eyebrow">Serving Minnesota &amp; Western Wisconsin</p>
+      <h1 class="hero-headline" id="hero-heading">Your Dream Floors,<br>Installed Right.</h1>
+      <p class="lead hero-lead">Professional carpet, hardwood, LVP, laminate, tile, and countertop installation for homes and businesses throughout the Twin Cities and beyond.</p>
+      <a href="#services" class="btn btn-outline-white btn-lg btn-pill hero-explore-btn">Explore Our Flooring</a>
+      <ul class="trust-badges">
+        <li class="trust-badge"><span class="trust-icon">&#11088;</span><span>4.9 Google Rating</span></li>
+        <li class="trust-badge"><span class="trust-icon">&#127968;</span><span>20+ Years Experience</span></li>
+        <li class="trust-badge"><span class="trust-icon">&#128197;</span><span>Same-Week Estimates</span></li>
+        <li class="trust-badge"><span class="trust-icon">&#9989;</span><span>Licensed &amp; Insured</span></li>
+      </ul>
+    </div>
+    <div class="hero-scheduler-wrap">
+      <div class="hero-scheduler">
+        <div class="scheduler-header">
+          <p class="scheduler-eyebrow">Free &middot; No Obligation</p>
+          <h2 class="scheduler-title">Book Your Free Estimate</h2>
+          <p class="scheduler-sub">We come to you. Same-week available.</p>
+        </div>
+        <form class="scheduler-form" id="hero-form" novalidate>
+          <div class="sform-group">
+            <label for="h-name" class="sform-label">Your Name <span>*</span></label>
+            <input type="text" id="h-name" name="name" class="sform-input" placeholder="Jane Smith" required autocomplete="name"/>
+          </div>
+          <div class="sform-group">
+            <label for="h-phone" class="sform-label">Phone Number <span>*</span></label>
+            <input type="tel" id="h-phone" name="phone" class="sform-input" placeholder="(651) 555-0000" required autocomplete="tel"/>
+          </div>
+          <div class="sform-group">
+            <label for="h-service" class="sform-label">Flooring Type <span>*</span></label>
+            <select id="h-service" name="service" class="sform-input sform-select" required>
+              <option value="" disabled selected>Select a service&hellip;</option>
+              <option>Carpet</option>
+              <option>Hardwood</option>
+              <option>Luxury Vinyl Plank (LVP)</option>
+              <option>Laminate</option>
+              <option>Luxury Vinyl Tile (LVT)</option>
+              <option>Countertops</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="sform-group">
+            <label for="h-date" class="sform-label">Preferred Date</label>
+            <input type="date" id="h-date" name="date" class="sform-input"/>
+          </div>
+          <button type="submit" class="btn btn-orange sform-submit">Request My Free Estimate &rarr;</button>
+          <div class="sform-success" id="hero-form-success" role="alert" hidden>&#9989; Thanks! We'll call you within 2 hours.</div>
+        </form>
+        <p class="scheduler-phone">Or call <a href="tel:6515550182">(651) 555-0182</a><br><span>Mon&ndash;Sat 8am&ndash;6pm</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES BAR -->
+<section class="services-bar" id="services">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <p class="eyebrow">What We Install</p>
+      <h2>Flooring &amp; Surfaces for Every Space</h2>
+    </div>
+    <div class="services-bar-grid">
+      <a href="carpet.html" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#127747;</span><span class="sbar-name">Carpet</span></a>
+      <a href="hardwood.html" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#129683;</span><span class="sbar-name">Hardwood</span></a>
+      <a href="lvp.html" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#128167;</span><span class="sbar-name">Luxury Vinyl Plank</span></a>
+      <a href="laminate.html" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#128203;</span><span class="sbar-name">Laminate</span></a>
+      <a href="lvt.html" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#9638;</span><span class="sbar-name">Luxury Vinyl Tile</span></a>
+      <a href="countertops.html" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#127859;</span><span class="sbar-name">Countertops</span></a>
+      <a href="#commercial" class="sbar-card animate-on-scroll"><span class="sbar-icon">&#127970;</span><span class="sbar-name">Commercial</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <p class="eyebrow">Our Work</p>
+      <h2>Beautiful Floors in Real Homes</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item wide animate-on-scroll">
+        <img src="images/hero-5.jpg" alt="Modern kitchen with LVP flooring and family"/>
+        <div class="gallery-label">Kitchen &middot; Luxury Vinyl Plank</div>
+      </div>
+      <div class="gallery-item tall animate-on-scroll">
+        <img src="images/hero-3.jpg" alt="Living room with hardwood flooring and area rug"/>
+        <div class="gallery-label">Living Room &middot; Hardwood</div>
+      </div>
+      <div class="gallery-item animate-on-scroll">
+        <img src="images/hero-4.jpg" alt="Bedroom with soft plush carpet"/>
+        <div class="gallery-label">Bedroom &middot; Carpet</div>
+      </div>
+      <div class="gallery-item animate-on-scroll">
+        <img src="images/hero-1.jpg" alt="Kitchen tile backsplash with kettle"/>
+        <div class="gallery-label">Kitchen &middot; Tile Backsplash</div>
+      </div>
+      <div class="gallery-item animate-on-scroll">
+        <img src="images/hero-2.jpg" alt="Hex tile kitchen floor with marble countertop"/>
+        <div class="gallery-label">Kitchen &middot; Hex Tile + Marble</div>
+      </div>
+      <div class="gallery-item animate-on-scroll">
+        <img src="images/samples.jpg" alt="Flooring samples laid out for consultation" onerror="this.src='images/hero-3.jpg'"/>
+        <div class="gallery-label">Consultation &middot; Samples Brought to You</div>
+      </div>
+    </div>
+    <div class="gallery-cta animate-on-scroll">
+      <a href="#booking" class="btn btn-orange btn-lg btn-pill">Schedule Your Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us section-pad" id="why-us">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <p class="eyebrow">The 651 Difference</p>
+      <h2>Why Twin Cities Homeowners Choose 651 Carpets+</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit animate-on-scroll">
+        <div class="benefit-icon">&#128176;</div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Factory-Direct Pricing</h3>
+          <p class="benefit-desc">We source directly from manufacturers. No showroom markup, no hidden fees &mdash; just honest pricing passed straight to you.</p>
+        </div>
+      </div>
+      <div class="benefit animate-on-scroll">
+        <div class="benefit-icon">&#128197;</div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Same-Week Estimates</h3>
+          <p class="benefit-desc">We work around your schedule with flexible weekday and Saturday appointments. We come to you &mdash; no showroom visit required.</p>
+        </div>
+      </div>
+      <div class="benefit animate-on-scroll">
+        <div class="benefit-icon">&#127942;</div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">20+ Years Experience</h3>
+          <p class="benefit-desc">Expert installers with decades of hands-on flooring experience across every product category we carry.</p>
+        </div>
+      </div>
+      <div class="benefit animate-on-scroll">
+        <div class="benefit-icon">&#128737;</div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">5-Year Workmanship Warranty</h3>
+          <p class="benefit-desc">We stand behind every install. If something isn't right, we make it right &mdash; guaranteed, no questions asked.</p>
+        </div>
+      </div>
+      <div class="benefit animate-on-scroll">
+        <div class="benefit-icon">&#129529;</div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Full Cleanup Included</h3>
+          <p class="benefit-desc">We remove and haul away your old flooring and leave every room spotless. No extra fees, no mess left behind.</p>
+        </div>
+      </div>
+      <div class="benefit animate-on-scroll">
+        <div class="benefit-icon">&#127968;</div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Local &amp; Family-Owned</h3>
+          <p class="benefit-desc">Rooted in the Twin Cities since 2003. We're your neighbors &mdash; and we treat every home like it's our own.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="process">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <p class="eyebrow">Simple Process</p>
+      <h2>From Estimate to Beautiful Floors in 3 Steps</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step animate-on-scroll">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Book a Free Estimate</h3>
+        <p class="step-desc">Pick a time online or by phone. We come to your home &mdash; no showroom visit required.</p>
+      </div>
+      <div class="step animate-on-scroll">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Choose Your Flooring</h3>
+        <p class="step-desc">Our expert brings hundreds of samples to your home, measures every room, and gives you a written quote on-site.</p>
+      </div>
+      <div class="step animate-on-scroll">
+        <div class="step-number">03</div>
+        <h3 class="step-title">We Install, You Love It</h3>
+        <p class="step-desc">Professional installation by certified crews. Full cleanup included. Backed by our 5-year workmanship guarantee.</p>
+      </div>
+    </div>
+    <div class="process-cta animate-on-scroll">
+      <a href="#booking" class="btn btn-orange btn-lg btn-pill">Start With a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL / RESIDENTIAL SPLIT -->
+<section class="market-split" id="commercial">
+  <div class="market-panel residential">
+    <p class="market-eyebrow">For Your Home</p>
+    <h2 class="market-title">Every Room Deserves Beautiful Floors</h2>
+    <p class="market-desc">From cozy bedroom carpet to stunning kitchen tile, we help homeowners transform their spaces with expert guidance and professional installation.</p>
+    <ul class="market-features">
+      <li class="market-feature"><span class="feature-check">&#10003;</span> Free in-home estimates &mdash; we come to you</li>
+      <li class="market-feature"><span class="feature-check">&#10003;</span> Hundreds of samples brought to your door</li>
+      <li class="market-feature"><span class="feature-check">&#10003;</span> Residential-grade products for every budget</li>
+      <li class="market-feature"><span class="feature-check">&#10003;</span> 5-year workmanship warranty on every install</li>
+    </ul>
+    <a href="#booking" class="btn btn-orange btn-pill" style="align-self:flex-start;margin-top:8px">Schedule Home Estimate</a>
+  </div>
+  <div class="market-panel commercial">
+    <p class="market-eyebrow">For Your Business</p>
+    <h2 class="market-title">Commercial Flooring That Performs</h2>
+    <p class="market-desc">Durable, professional flooring solutions for offices, retail spaces, hospitality venues, and more. We minimize disruption and deliver on schedule.</p>
+    <ul class="market-features">
+      <li class="market-feature"><span class="feature-check" style="color:var(--sky)">&#10003;</span> High-traffic commercial-grade products</li>
+      <li class="market-feature"><span class="feature-check" style="color:var(--sky)">&#10003;</span> Project management from start to finish</li>
+      <li class="market-feature"><span class="feature-check" style="color:var(--sky)">&#10003;</span> Flexible scheduling to minimize downtime</li>
+      <li class="market-feature"><span class="feature-check" style="color:var(--sky)">&#10003;</span> Volume pricing for large projects</li>
+    </ul>
+    <a href="#booking" class="btn btn-outline-white btn-pill" style="align-self:flex-start;margin-top:8px">Get Commercial Quote</a>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="service-area" id="service-area">
+  <div class="container service-area-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--orange)">Where We Serve</p>
+      <h2>Serving Minnesota &amp; Western Wisconsin</h2>
+      <p class="service-area-desc">From the Twin Cities metro to the western edge of Wisconsin, we bring expert flooring installation and consultation directly to your home or business.</p>
+      <ul class="area-list">
+        <li class="area-item"><span class="area-dot"></span>Twin Cities Metro Area (Minneapolis &amp; St. Paul)</li>
+        <li class="area-item"><span class="area-dot"></span>Eastern, Northern &amp; Southern Metro Suburbs</li>
+        <li class="area-item"><span class="area-dot"></span>Western Wisconsin Communities</li>
+        <li class="area-item"><span class="area-dot"></span>Hudson, River Falls &amp; Eau Claire area</li>
+        <li class="area-item"><span class="area-dot"></span>Call to confirm your location</li>
+      </ul>
+    </div>
+    <div class="area-map">
+      <span>&#128506;</span>
+      <p>Minnesota &amp; Western Wisconsin</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <p class="eyebrow">What Homeowners Say</p>
+      <h2>Trusted by 1,200+ Twin Cities Families</h2>
+    </div>
+    <div class="testimonials-grid">
+      <blockquote class="testimonial-card animate-on-scroll">
+        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+        <p class="testimonial-quote">&ldquo;651 Carpets came out the same week I called. The LVP they installed looks incredible &mdash; I've already recommended them to three neighbors.&rdquo;</p>
+        <footer class="testimonial-author"><strong>Sarah K.</strong><span>Eagan, MN</span></footer>
+      </blockquote>
+      <blockquote class="testimonial-card animate-on-scroll">
+        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+        <p class="testimonial-quote">&ldquo;Fair price, zero pressure, beautiful carpet. The crew was professional and cleaned up everything. Couldn't be happier with how it turned out.&rdquo;</p>
+        <footer class="testimonial-author"><strong>Mark T.</strong><span>Woodbury, MN</span></footer>
+      </blockquote>
+      <blockquote class="testimonial-card animate-on-scroll">
+        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+        <p class="testimonial-quote">&ldquo;We did our entire main floor &mdash; hardwood in the living room, tile in the kitchen. Flawless work from start to finish. Booking was super easy.&rdquo;</p>
+        <footer class="testimonial-author"><strong>Jennifer R.</strong><span>Apple Valley, MN</span></footer>
+      </blockquote>
+    </div>
+    <div class="google-badge animate-on-scroll">
+      <div class="google-badge-inner">
+        <div class="google-g">G</div>
+        <div class="google-badge-text"><strong>4.9 &#9733; on Google</strong><span>200+ Verified Reviews</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container about-inner">
+    <div class="about-img-wrap">
+      <img src="images/consultation.jpg" alt="651 Carpets+ team helping a homeowner choose flooring" onerror="this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;background:linear-gradient(135deg,#254356,#162A37);display:flex;align-items:center;justify-content:center;font-size:4rem&quot;>&#127968;</div>'"/>
+    </div>
+    <div class="about-text animate-on-scroll">
+      <p class="eyebrow">Our Story</p>
+      <h2>Family-Owned &amp; Operated Since 2003</h2>
+      <p>651 Carpets+ was founded on a simple belief: every homeowner deserves beautiful floors, expert installation, and honest pricing. Two decades later, that belief still drives everything we do &mdash; from our factory-direct sourcing to our 5-year workmanship guarantee.</p>
+      <p>We're proud to serve the Twin Cities metro and Western Wisconsin communities with the same care and commitment that earned us 200+ five-star Google reviews.</p>
+      <div class="about-stats">
+        <div class="about-stat"><div class="about-stat-number">20+</div><div class="about-stat-label">Years in Business</div></div>
+        <div class="about-stat"><div class="about-stat-number">1,200+</div><div class="about-stat-label">Homes Installed</div></div>
+        <div class="about-stat"><div class="about-stat-number">4.9&#9733;</div><div class="about-stat-label">Google Rating</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <div class="container booking-inner">
+    <div class="booking-copy animate-on-scroll">
+      <p class="eyebrow" style="color:var(--orange)">Get Started Today</p>
+      <h2 class="booking-headline">Schedule Your Free,<br>No-Pressure Estimate</h2>
+      <p class="booking-body">We'll come to your home, measure every room, bring hundreds of samples, and give you a written quote &mdash; all for free. No obligation, ever.</p>
+      <p class="booking-phone-note">Or call us at <a href="tel:6515550182" class="phone-link">(651) 555-0182</a> &middot; Mon&ndash;Sat 8am&ndash;6pm</p>
+    </div>
+    <div class="booking-form-wrap animate-on-scroll">
+      <form id="booking-form" novalidate>
+        <h3 class="form-title">Request My Free Estimate</h3>
+        <p class="form-subtitle">We'll confirm your appointment within 2 hours.</p>
+        <div class="form-group">
+          <label for="name" class="form-label">Your Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Jane Smith" required autocomplete="name"/>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="(651) 555-0000" required autocomplete="tel"/>
+        </div>
+        <div class="form-group">
+          <label for="service" class="form-label">Service Interested In <span class="required">*</span></label>
+          <select id="service" name="service" class="form-input form-select" required>
+            <option value="" disabled selected>Select a service&hellip;</option>
+            <option>Carpet</option>
+            <option>Hardwood</option>
+            <option>Luxury Vinyl Plank (LVP)</option>
+            <option>Laminate</option>
+            <option>Luxury Vinyl Tile (LVT)</option>
+            <option>Countertops</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="preferred-date" class="form-label">Preferred Date</label>
+          <input type="date" id="preferred-date" name="date" class="form-input"/>
+        </div>
+        <button type="submit" class="btn btn-orange form-submit">Request My Estimate &rarr;</button>
+        <div class="form-success" id="form-success" role="alert" hidden>&#9989; Thanks! We'll call you within 2 hours to confirm.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="wordmark footer-wordmark">
         <span class="wm-651">651</span><span class="wm-carpets">Carpets</span><span class="wm-plus">+</span>
       </a>
-
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
-          <li><a href="#reviews" class="nav-link">Reviews</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-        </ul>
-      </nav>
-
-      <a href="#booking" class="btn btn-orange btn-pill nav-cta" aria-label="Schedule a free flooring estimate">
-        Schedule Free Estimate
-      </a>
-
-      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
+      <p class="footer-tagline">Minnesota's Flooring Experts</p>
+      <p class="footer-blurb">Family-owned. Factory-direct. Serving the Twin Cities metro and Western Wisconsin since 2003.</p>
     </div>
-  </header>
-
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero" id="home" aria-labelledby="hero-heading">
-
-      <!-- Slideshow background (left/full panel) -->
-      <div class="hero-slides" aria-hidden="true">
-        <div class="hero-slide active" style="background-image:url('images/hero-5.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('images/hero-3.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('images/hero-4.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('images/hero-1.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('images/hero-2.jpg')"></div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-      </div>
-
-      <!-- Slide dots -->
-      <div class="hero-dots" aria-label="Image slideshow controls">
-        <button class="hero-dot active" data-slide="0" aria-label="Show image 1"></button>
-        <button class="hero-dot" data-slide="1" aria-label="Show image 2"></button>
-        <button class="hero-dot" data-slide="2" aria-label="Show image 3"></button>
-        <button class="hero-dot" data-slide="3" aria-label="Show image 4"></button>
-        <button class="hero-dot" data-slide="4" aria-label="Show image 5"></button>
-      </div>
-
-      <!-- Hero content split: left copy | right sticky scheduler -->
-      <div class="hero-split">
-
-        <!-- LEFT: Headline + trust -->
-        <div class="hero-content">
-          <p class="eyebrow">Minnesota's Flooring Experts</p>
-          <h1 class="hero-headline" id="hero-heading">Beautiful Floors<br>Start With a<br>Free Estimate</h1>
-          <p class="lead hero-lead">651 Carpets+ installs carpet, hardwood, LVP, and tile throughout the Twin Cities metro. Same-week appointments available.</p>
-          <a href="#services" class="btn btn-outline-white btn-lg btn-pill hero-explore-btn">Explore Our Work</a>
-
-          <ul class="trust-badges" aria-label="Trust indicators">
-            <li class="trust-badge">
-              <span class="trust-icon" aria-hidden="true">⭐</span>
-              <span>4.9 Rating</span>
-            </li>
-            <li class="trust-badge">
-              <span class="trust-icon" aria-hidden="true">🏠</span>
-              <span>1,200+ Installs</span>
-            </li>
-            <li class="trust-badge">
-              <span class="trust-icon" aria-hidden="true">📅</span>
-              <span>Same-Week Estimates</span>
-            </li>
-            <li class="trust-badge">
-              <span class="trust-icon" aria-hidden="true">✅</span>
-              <span>Licensed &amp; Insured</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- RIGHT: Sticky scheduler card -->
-        <div class="hero-scheduler-wrap">
-          <div class="hero-scheduler" id="hero-scheduler">
-            <div class="scheduler-header">
-              <p class="scheduler-eyebrow">Free · No Obligation</p>
-              <h2 class="scheduler-title">Book Your Free Estimate</h2>
-              <p class="scheduler-sub">We come to you. Same-week available.</p>
-            </div>
-
-            <form class="scheduler-form" id="hero-form" novalidate aria-label="Schedule a free estimate">
-              <div class="sform-group">
-                <label for="h-name" class="sform-label">Your Name <span aria-hidden="true">*</span></label>
-                <input type="text" id="h-name" name="name" class="sform-input" placeholder="Jane Smith" required autocomplete="name" />
-              </div>
-              <div class="sform-group">
-                <label for="h-phone" class="sform-label">Phone Number <span aria-hidden="true">*</span></label>
-                <input type="tel" id="h-phone" name="phone" class="sform-input" placeholder="(651) 555-0000" required autocomplete="tel" />
-              </div>
-              <div class="sform-group">
-                <label for="h-service" class="sform-label">Flooring Type <span aria-hidden="true">*</span></label>
-                <select id="h-service" name="service" class="sform-input sform-select" required>
-                  <option value="" disabled selected>Select a service…</option>
-                  <option value="carpet">Carpet</option>
-                  <option value="hardwood">Hardwood</option>
-                  <option value="lvp">Luxury Vinyl Plank (LVP)</option>
-                  <option value="tile">Tile &amp; Stone</option>
-                  <option value="unsure">Not Sure Yet</option>
-                </select>
-              </div>
-              <div class="sform-group">
-                <label for="h-date" class="sform-label">Preferred Date</label>
-                <input type="date" id="h-date" name="date" class="sform-input" />
-              </div>
-              <button type="submit" class="btn btn-orange sform-submit">
-                Request My Free Estimate →
-              </button>
-              <div class="sform-success" id="hero-form-success" role="alert" aria-live="polite" hidden>
-                ✅ Thanks! We'll call you within 2 hours to confirm.
-              </div>
-            </form>
-
-            <p class="scheduler-phone">Or call <a href="tel:6515550182">(651) 555-0182</a><br><span>Mon–Sat 8am–6pm</span></p>
-          </div>
-        </div>
-
-      </div><!-- /hero-split -->
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services-section section-pad" id="services" aria-labelledby="services-heading">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="eyebrow">What We Install</p>
-          <h2 id="services-heading">Flooring for Every Room &amp; Style</h2>
-        </div>
-        <div class="services-grid">
-
-          <article class="service-card animate-on-scroll" aria-label="Carpet Installation service">
-            <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-icon" aria-hidden="true">🛋️</div>
-            <h3 class="service-name">Carpet Installation</h3>
-            <p class="service-desc">Plush, berber, frieze, and more — warmth and comfort for bedrooms, basements, and living spaces.</p>
-            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="service-card animate-on-scroll" aria-label="Hardwood Flooring service">
-            <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-icon" aria-hidden="true">🪵</div>
-            <h3 class="service-name">Hardwood Flooring</h3>
-            <p class="service-desc">Solid and engineered hardwood that adds lasting value and timeless beauty to any home.</p>
-            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="service-card animate-on-scroll" aria-label="Luxury Vinyl Plank service">
-            <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-icon" aria-hidden="true">💧</div>
-            <h3 class="service-name">Luxury Vinyl Plank</h3>
-            <p class="service-desc">Waterproof, durable, and stunning — perfect for kitchens, bathrooms, and high-traffic areas.</p>
-            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="service-card animate-on-scroll" aria-label="Tile and Stone service">
-            <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-icon" aria-hidden="true">🔲</div>
-            <h3 class="service-name">Tile &amp; Stone</h3>
-            <p class="service-desc">Porcelain, ceramic, and natural stone for kitchens, bathrooms, entryways, and beyond.</p>
-            <a href="#booking" class="service-link">Get Estimate <span aria-hidden="true">→</span></a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="how-it-works section-pad" id="process" aria-labelledby="process-heading">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="eyebrow">Simple Process</p>
-          <h2 id="process-heading">From Estimate to Beautiful Floors in 3 Steps</h2>
-        </div>
-        <div class="steps-grid">
-
-          <div class="step animate-on-scroll">
-            <div class="step-number" aria-hidden="true">01</div>
-            <h3 class="step-title">Book a Free Estimate</h3>
-            <p class="step-desc">Pick a time online or by phone. We come to you — no showroom visit required.</p>
-          </div>
-
-          <div class="step animate-on-scroll">
-            <div class="step-number" aria-hidden="true">02</div>
-            <h3 class="step-title">Choose Your Flooring</h3>
-            <p class="step-desc">Our expert brings samples to your home, measures every room, and gives you a written quote on-site.</p>
-          </div>
-
-          <div class="step animate-on-scroll">
-            <div class="step-number" aria-hidden="true">03</div>
-            <h3 class="step-title">We Install, You Love It</h3>
-            <p class="step-desc">Professional installation by certified crews. Full cleanup included. Backed by our 5-year workmanship guarantee.</p>
-          </div>
-
-        </div>
-        <div class="process-cta animate-on-scroll">
-          <a href="#booking" class="btn btn-orange btn-lg btn-pill">Start With a Free Estimate</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="why-us section-pad" id="about" aria-labelledby="why-heading">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="eyebrow">The 651 Difference</p>
-          <h2 id="why-heading">Why Twin Cities Homeowners Choose Us</h2>
-        </div>
-        <div class="benefits-grid">
-
-          <div class="benefit animate-on-scroll">
-            <div class="benefit-icon" aria-hidden="true">💰</div>
-            <div class="benefit-content">
-              <h3 class="benefit-title">Factory-Direct Pricing</h3>
-              <p class="benefit-desc">No showroom markup. We source direct and pass every dollar of savings straight to you.</p>
-            </div>
-          </div>
-
-          <div class="benefit animate-on-scroll">
-            <div class="benefit-icon" aria-hidden="true">📅</div>
-            <div class="benefit-content">
-              <h3 class="benefit-title">Same-Week Appointments</h3>
-              <p class="benefit-desc">Busy schedules welcome. We work around your availability, including Saturdays.</p>
-            </div>
-          </div>
-
-          <div class="benefit animate-on-scroll">
-            <div class="benefit-icon" aria-hidden="true">🏆</div>
-            <div class="benefit-content">
-              <h3 class="benefit-title">Expert Installation Team</h3>
-              <p class="benefit-desc">Certified installers with an average of 10+ years of hands-on flooring experience.</p>
-            </div>
-          </div>
-
-          <div class="benefit animate-on-scroll">
-            <div class="benefit-icon" aria-hidden="true">🛡️</div>
-            <div class="benefit-content">
-              <h3 class="benefit-title">5-Year Workmanship Warranty</h3>
-              <p class="benefit-desc">We stand behind every install. If something isn't right, we make it right — guaranteed.</p>
-            </div>
-          </div>
-
-          <div class="benefit animate-on-scroll">
-            <div class="benefit-icon" aria-hidden="true">🧹</div>
-            <div class="benefit-content">
-              <h3 class="benefit-title">Full Cleanup Included</h3>
-              <p class="benefit-desc">We haul away your old flooring and leave your home spotless. No extra fees, no mess.</p>
-            </div>
-          </div>
-
-          <div class="benefit animate-on-scroll">
-            <div class="benefit-icon" aria-hidden="true">🏡</div>
-            <div class="benefit-content">
-              <h3 class="benefit-title">Local, Family-Owned</h3>
-              <p class="benefit-desc">Proudly serving the Twin Cities since 2003. Your neighbors trust us — and so can you.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials section-pad" id="reviews" aria-labelledby="reviews-heading">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="eyebrow">What Homeowners Say</p>
-          <h2 id="reviews-heading">Trusted by 1,200+ Twin Cities Families</h2>
-        </div>
-        <div class="testimonials-grid">
-
-          <blockquote class="testimonial-card animate-on-scroll">
-            <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-quote">"651 Carpets came out the same week I called. The LVP they installed looks incredible — I've already recommended them to three neighbors."</p>
-            <footer class="testimonial-author">
-              <strong>Sarah K.</strong>
-              <span>Eagan, MN</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial-card animate-on-scroll">
-            <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-quote">"Fair price, zero pressure, beautiful carpet. The crew was professional and cleaned up everything. Couldn't be happier with how it turned out."</p>
-            <footer class="testimonial-author">
-              <strong>Mark T.</strong>
-              <span>Woodbury, MN</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial-card animate-on-scroll">
-            <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-quote">"We did our entire main floor — hardwood in the living room, tile in the kitchen. Flawless work from start to finish. Booking was super easy."</p>
-            <footer class="testimonial-author">
-              <strong>Jennifer R.</strong>
-              <span>Apple Valley, MN</span>
-            </footer>
-          </blockquote>
-
-        </div>
-
-        <div class="google-badge animate-on-scroll" aria-label="Google Reviews — 4.9 stars, 200-plus reviews">
-          <div class="google-badge-inner">
-            <div class="google-g" aria-hidden="true">G</div>
-            <div class="google-badge-text">
-              <strong>4.9 ★ on Google</strong>
-              <span>200+ Verified Reviews</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BOOKING SECTION -->
-    <section class="booking-section section-pad" id="booking" aria-labelledby="booking-heading">
-      <div class="container booking-inner">
-
-        <div class="booking-copy animate-on-scroll">
-          <p class="eyebrow eyebrow-light">Get Started Today</p>
-          <h2 id="booking-heading" class="booking-headline">Schedule Your Free,<br>No-Pressure Estimate</h2>
-          <p class="booking-body">We'll come to your home, measure, bring samples, and give you a written quote — all for free. No obligation, ever.</p>
-          <a href="#booking-form" class="btn btn-orange btn-lg btn-pill booking-hero-btn">
-            Book My Free Estimate
-          </a>
-          <p class="booking-phone-note">Or call us at <a href="tel:6515550182" class="phone-link">(651) 555-0182</a> &middot; Mon–Sat 8am–6pm</p>
-        </div>
-
-        <div class="booking-form-wrap animate-on-scroll" id="gallery">
-          <form class="booking-form" id="booking-form" novalidate aria-label="Request a free flooring estimate">
-            <h3 class="form-title">Request My Free Estimate</h3>
-            <p class="form-subtitle">We'll confirm your appointment within 2 hours.</p>
-
-            <div class="form-group">
-              <label for="name" class="form-label">Your Name <span class="required" aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="Jane Smith"
-                required
-                autocomplete="name"
-                aria-required="true"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="form-label">Phone Number <span class="required" aria-hidden="true">*</span></label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="form-input"
-                placeholder="(651) 555-0000"
-                required
-                autocomplete="tel"
-                aria-required="true"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="service" class="form-label">Service Interested In <span class="required" aria-hidden="true">*</span></label>
-              <select id="service" name="service" class="form-input form-select" required aria-required="true">
-                <option value="" disabled selected>Select a service…</option>
-                <option value="carpet">Carpet Installation</option>
-                <option value="hardwood">Hardwood Flooring</option>
-                <option value="lvp">Luxury Vinyl Plank (LVP)</option>
-                <option value="tile">Tile &amp; Stone</option>
-                <option value="unsure">Not Sure Yet</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="preferred-date" class="form-label">Preferred Date</label>
-              <input
-                type="date"
-                id="preferred-date"
-                name="preferred-date"
-                class="form-input"
-              />
-            </div>
-
-            <button type="submit" class="btn btn-orange btn-lg form-submit">
-              Request My Estimate <span aria-hidden="true">→</span>
-            </button>
-
-            <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
-              <span class="success-icon" aria-hidden="true">✅</span>
-              Thanks! We'll call you within 2 hours to confirm.
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-grid">
-
-      <div class="footer-brand">
-        <a href="#home" class="wordmark" aria-label="651 Carpets+ — back to top">
-          <span class="wm-651">651</span><span class="wm-carpets">Carpets</span><span class="wm-plus">+</span>
-        </a>
-        <p class="footer-tagline">Minnesota's Flooring Experts</p>
-        <p class="footer-blurb">Family-owned. Factory-direct. Serving the Twin Cities metro with expert flooring since 2003.</p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <h4 class="footer-nav-heading">Navigate</h4>
-        <ul class="footer-nav-list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#booking">Get an Estimate</a></li>
-        </ul>
-      </nav>
-
-      <div class="footer-contact">
-        <h4 class="footer-nav-heading">Contact Us</h4>
-        <ul class="footer-contact-list">
-          <li>
-            <span aria-hidden="true">📞</span>
-            <a href="tel:6515550182">(651) 555-0182</a>
-          </li>
-          <li>
-            <span aria-hidden="true">✉️</span>
-            <a href="mailto:hello@651carpets.com">hello@651carpets.com</a>
-          </li>
-          <li>
-            <span aria-hidden="true">📍</span>
-            <span>Twin Cities Metro Area, MN</span>
-          </li>
-          <li>
-            <span aria-hidden="true">🕐</span>
-            <span>Mon–Sat 8am–6pm</span>
-          </li>
-        </ul>
-      </div>
-
+    <nav class="footer-nav" aria-label="Products">
+      <h4 class="footer-nav-heading">Products</h4>
+      <ul class="footer-nav-list">
+        <li><a href="carpet.html">Carpet</a></li>
+        <li><a href="hardwood.html">Hardwood</a></li>
+        <li><a href="lvp.html">Luxury Vinyl Plank</a></li>
+        <li><a href="laminate.html">Laminate</a></li>
+        <li><a href="lvt.html">Luxury Vinyl Tile</a></li>
+        <li><a href="countertops.html">Countertops</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-nav" aria-label="Services">
+      <h4 class="footer-nav-heading">Services</h4>
+      <ul class="footer-nav-list">
+        <li><a href="#commercial">Residential</a></li>
+        <li><a href="#commercial">Commercial</a></li>
+        <li><a href="#booking">Free Estimates</a></li>
+        <li><a href="#service-area">Service Area</a></li>
+      </ul>
+    </nav>
+    <div class="footer-contact">
+      <h4 class="footer-nav-heading">Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li><span>&#128222;</span><a href="tel:6515550182">(651) 555-0182</a></li>
+        <li><span>&#9993;</span><a href="mailto:hello@651carpets.com">hello@651carpets.com</a></li>
+        <li><span>&#128205;</span><span>Twin Cities &amp; W. Wisconsin</span></li>
+        <li><span>&#128336;</span><span>Mon&ndash;Sat 8am&ndash;6pm</span></li>
+      </ul>
     </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; 2024 651 Carpets+. All rights reserved.</p>
-        <p>Licensed &amp; Insured &middot; MN Contractor License #BC123456</p>
-      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; 2024 651 Carpets+. All rights reserved.</p>
+      <p>Licensed &amp; Insured &middot; MN Contractor License #BC123456</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
