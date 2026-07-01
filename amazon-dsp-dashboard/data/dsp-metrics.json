@@ -1,0 +1,1230 @@
+{
+ "period": "June 2026",
+ "generated": "July 1, 2026",
+ "order": [
+  "Yates Astro",
+  "Bell's Appliances",
+  "Parrott Academy",
+  "Furnitre Distributors"
+ ],
+ "clients": {
+  "Parrott Academy": {
+   "kpi": {
+    "impr": 156454,
+    "clicks": 605,
+    "ctr": 0.387,
+    "conv": 0,
+    "segments": 235,
+    "sites": 5311
+   },
+   "campaigns": [
+    {
+     "name": "Parrott Academy | Awareness",
+     "impr": 148071,
+     "clicks": 588,
+     "ctr": 0.397,
+     "conv": 0
+    },
+    {
+     "name": "Parrott Academy | Prime Video",
+     "impr": 8383,
+     "clicks": 17,
+     "ctr": 0.203,
+     "conv": 0
+    }
+   ],
+   "supply": [
+    {
+     "name": "Amazon Publisher Services",
+     "impr": 33850,
+     "clicks": 11,
+     "ctr": 0.032,
+     "share": 21.6
+    },
+    {
+     "name": "Media.net",
+     "impr": 30713,
+     "clicks": 60,
+     "ctr": 0.195,
+     "share": 19.6
+    },
+    {
+     "name": "Magnite DV+",
+     "impr": 12444,
+     "clicks": 213,
+     "ctr": 1.712,
+     "share": 8.0
+    },
+    {
+     "name": "PubMatic",
+     "impr": 9597,
+     "clicks": 69,
+     "ctr": 0.719,
+     "share": 6.1
+    },
+    {
+     "name": "Prime Video ads",
+     "impr": 9216,
+     "clicks": 18,
+     "ctr": 0.195,
+     "share": 5.9
+    },
+    {
+     "name": "Roku",
+     "impr": 8194,
+     "clicks": 0,
+     "ctr": 0.0,
+     "share": 5.2
+    },
+    {
+     "name": "InMobi",
+     "impr": 7959,
+     "clicks": 8,
+     "ctr": 0.101,
+     "share": 5.1
+    },
+    {
+     "name": "Triplelift",
+     "impr": 7222,
+     "clicks": 52,
+     "ctr": 0.72,
+     "share": 4.6
+    }
+   ],
+   "sites": [
+    {
+     "name": "roku (ID: 151908)",
+     "impr": 7119,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "mail.yahoo.com",
+     "impr": 6910,
+     "clicks": 5,
+     "ctr": 0.072
+    },
+    {
+     "name": "Samsung TV Plus- STV (ID: bbdb37fe63084b938641ad092cb4e684)",
+     "impr": 6003,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "amazon.com",
+     "impr": 5991,
+     "clicks": 1,
+     "ctr": 0.017
+    },
+    {
+     "name": "Paramount EyeQ",
+     "impr": 4500,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "smartnews.com",
+     "impr": 4393,
+     "clicks": 6,
+     "ctr": 0.137
+    },
+    {
+     "name": "Brain Test 2 (ID: com.unicostudio.braintest2new)",
+     "impr": 3483,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "yahoo.com",
+     "impr": 3184,
+     "clicks": 3,
+     "ctr": 0.094
+    },
+    {
+     "name": "TubiTV Roku (ID: 8edddb2c6be548f496c4fff9664963f8)",
+     "impr": 2970,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "PRIME_VIDEO_ADS_FIRE_TV (ID: 7e944acd56594310bc41d19f03766435)",
+     "impr": 2677,
+     "clicks": 1,
+     "ctr": 0.037
+    }
+   ],
+   "seg_reach": [
+    {
+     "name": "IM - Health, Beauty or Fashion",
+     "impr": 230170,
+     "ctr": 0.383,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Drama",
+     "impr": 212767,
+     "ctr": 0.374,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Comedy",
+     "impr": 208825,
+     "ctr": 0.373,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Home & Kitchen",
+     "impr": 204974,
+     "ctr": 0.38,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Suspense",
+     "impr": 204720,
+     "ctr": 0.372,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Adventure",
+     "impr": 203274,
+     "ctr": 0.371,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Science Fiction",
+     "impr": 198271,
+     "ctr": 0.365,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Romance",
+     "impr": 195990,
+     "ctr": 0.367,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "seg_ctr": [
+    {
+     "name": "Samsung Galaxy S24 (including FE, Ultra, Plus)",
+     "impr": 5074,
+     "ctr": 1.222,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Motorola",
+     "impr": 7043,
+     "ctr": 1.136,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Verizon",
+     "impr": 2673,
+     "ctr": 1.122,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Pixel 5 (including 5a)",
+     "impr": 3354,
+     "ctr": 0.954,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Tablet",
+     "impr": 6290,
+     "ctr": 0.874,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Samsung Galaxy S23 (including FE, Ultra, Plus)",
+     "impr": 4166,
+     "ctr": 0.864,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "[To Be Deprecated] Android",
+     "impr": 58352,
+     "ctr": 0.841,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Google",
+     "impr": 3955,
+     "ctr": 0.834,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    }
+   ],
+   "seg_conv": [],
+   "clsmix": [
+    {
+     "label": "In-market & Lifestyle (Behavior)",
+     "impr": 10681362
+    },
+    {
+     "label": "Device / OS",
+     "impr": 1201844
+    },
+    {
+     "label": "Custom (ASIN)",
+     "impr": 1599
+    }
+   ]
+  },
+  "Bell's Appliances": {
+   "kpi": {
+    "impr": 183079,
+    "clicks": 682,
+    "ctr": 0.373,
+    "conv": 972,
+    "segments": 341,
+    "sites": 3754
+   },
+   "campaigns": [
+    {
+     "name": "Bells Awareness - June",
+     "impr": 139041,
+     "clicks": 203,
+     "ctr": 0.146,
+     "conv": 404
+    },
+    {
+     "name": "Bells Conversion Order 2026 - June",
+     "impr": 44038,
+     "clicks": 479,
+     "ctr": 1.088,
+     "conv": 568
+    },
+    {
+     "name": "Bells Awareness",
+     "impr": 0,
+     "clicks": 0,
+     "ctr": 0,
+     "conv": 0
+    },
+    {
+     "name": "Bells Conversion Order 2026",
+     "impr": 0,
+     "clicks": 0,
+     "ctr": 0,
+     "conv": 0
+    }
+   ],
+   "supply": [
+    {
+     "name": "Amazon Publisher Services",
+     "impr": 45551,
+     "clicks": 10,
+     "ctr": 0.022,
+     "share": 24.9
+    },
+    {
+     "name": "Prime Video FAST",
+     "impr": 25122,
+     "clicks": 0,
+     "ctr": 0.0,
+     "share": 13.7
+    },
+    {
+     "name": "Magnite DV+",
+     "impr": 13909,
+     "clicks": 169,
+     "ctr": 1.215,
+     "share": 7.6
+    },
+    {
+     "name": "AMAZON_US MSHOP WEBVIEW",
+     "impr": 13420,
+     "clicks": 1,
+     "ctr": 0.007,
+     "share": 7.3
+    },
+    {
+     "name": "Media.net",
+     "impr": 9472,
+     "clicks": 32,
+     "ctr": 0.338,
+     "share": 5.2
+    },
+    {
+     "name": "PubMatic",
+     "impr": 9346,
+     "clicks": 80,
+     "ctr": 0.856,
+     "share": 5.1
+    },
+    {
+     "name": "AMAZON.COM",
+     "impr": 7508,
+     "clicks": 0,
+     "ctr": 0.0,
+     "share": 4.1
+    },
+    {
+     "name": "M.AMAZON.COM",
+     "impr": 7475,
+     "clicks": 1,
+     "ctr": 0.013,
+     "share": 4.1
+    }
+   ],
+   "sites": [
+    {
+     "name": "amazon.com",
+     "impr": 35527,
+     "clicks": 2,
+     "ctr": 0.006
+    },
+    {
+     "name": "Samsung TV Plus- STV (ID: bbdb37fe63084b938641ad092cb4e684)",
+     "impr": 27492,
+     "clicks": 1,
+     "ctr": 0.004
+    },
+    {
+     "name": "FireTV Channels (ID: firetv-video-news)",
+     "impr": 5870,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "mail.yahoo.com",
+     "impr": 5590,
+     "clicks": 1,
+     "ctr": 0.018
+    },
+    {
+     "name": "roku (ID: 151908)",
+     "impr": 5570,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "PV Fire TV (ID: b94d934eb5984fb8b161a5d292610c87)",
+     "impr": 5142,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "48c38e27ff914ab982373e57c4157aa3",
+     "impr": 4409,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "Alarmy (sleep if u can) (ID: droom.sleepifucan)",
+     "impr": 4332,
+     "clicks": 181,
+     "ctr": 4.178
+    },
+    {
+     "name": "Paramount EyeQ",
+     "impr": 3810,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "smartnews.com",
+     "impr": 3271,
+     "clicks": 2,
+     "ctr": 0.061
+    }
+   ],
+   "seg_reach": [
+    {
+     "name": "IM - Health, Beauty or Fashion",
+     "impr": 287121,
+     "ctr": 0.396,
+     "conv": 1072,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Drama",
+     "impr": 286807,
+     "ctr": 0.358,
+     "conv": 1032,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Comedy",
+     "impr": 282322,
+     "ctr": 0.356,
+     "conv": 1020,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Suspense",
+     "impr": 279635,
+     "ctr": 0.355,
+     "conv": 1032,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Adventure",
+     "impr": 276517,
+     "ctr": 0.357,
+     "conv": 1007,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Romance",
+     "impr": 264418,
+     "ctr": 0.361,
+     "conv": 978,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Science Fiction",
+     "impr": 263732,
+     "ctr": 0.361,
+     "conv": 974,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Fantasy",
+     "impr": 239948,
+     "ctr": 0.38,
+     "conv": 930,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "seg_ctr": [
+    {
+     "name": "LS - IMDb Entertainment Enthusiasts",
+     "impr": 2309,
+     "ctr": 2.599,
+     "conv": 17,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Computer Mavens",
+     "impr": 2822,
+     "ctr": 2.587,
+     "conv": 24,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "T-Mobile",
+     "impr": 3493,
+     "ctr": 2.405,
+     "conv": 8,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "[To Be Deprecated] ISP: T-Mobile USA",
+     "impr": 3493,
+     "ctr": 2.405,
+     "conv": 8,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "LS - Whole Foods Market Active Online Pickup or Delivery Eligible Customers",
+     "impr": 8354,
+     "ctr": 2.358,
+     "conv": 53,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "Verizon",
+     "impr": 4896,
+     "ctr": 2.002,
+     "conv": 17,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Bells Page View Visit - 30 days",
+     "impr": 7575,
+     "ctr": 1.558,
+     "conv": 223,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "Samsung Galaxy S23 (including FE, Ultra, Plus)",
+     "impr": 5014,
+     "ctr": 1.456,
+     "conv": 55,
+     "cls": "USER_AGENT"
+    }
+   ],
+   "seg_conv": [
+    {
+     "name": "IM - Health, Beauty or Fashion",
+     "impr": 287121,
+     "ctr": 0.396,
+     "conv": 1072,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Drama",
+     "impr": 286807,
+     "ctr": 0.358,
+     "conv": 1032,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Suspense",
+     "impr": 279635,
+     "ctr": 0.355,
+     "conv": 1032,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Comedy",
+     "impr": 282322,
+     "ctr": 0.356,
+     "conv": 1020,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Adventure",
+     "impr": 276517,
+     "ctr": 0.357,
+     "conv": 1007,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Romance",
+     "impr": 264418,
+     "ctr": 0.361,
+     "conv": 978,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "clsmix": [
+    {
+     "label": "In-market & Lifestyle (Behavior)",
+     "impr": 13843046
+    },
+    {
+     "label": "Device / OS",
+     "impr": 1504164
+    },
+    {
+     "label": "Custom (ASIN)",
+     "impr": 9366
+    }
+   ]
+  },
+  "Furnitre Distributors": {
+   "kpi": {
+    "impr": 105031,
+    "clicks": 196,
+    "ctr": 0.187,
+    "conv": 0,
+    "segments": 210,
+    "sites": 2169
+   },
+   "campaigns": [
+    {
+     "name": "Furniture Distributors | Awareness | July 4th",
+     "impr": 96280,
+     "clicks": 49,
+     "ctr": 0.051,
+     "conv": 0
+    },
+    {
+     "name": "Furniture Distributors | Consideration | July 4th",
+     "impr": 8710,
+     "clicks": 147,
+     "ctr": 1.688,
+     "conv": 0
+    },
+    {
+     "name": "Furniture Distributors | Awareness | Spring 2026",
+     "impr": 41,
+     "clicks": 0,
+     "ctr": 0.0,
+     "conv": 0
+    }
+   ],
+   "supply": [
+    {
+     "name": "Media.net",
+     "impr": 16295,
+     "clicks": 16,
+     "ctr": 0.098,
+     "share": 15.5
+    },
+    {
+     "name": "Amazon Publisher Services",
+     "impr": 14122,
+     "clicks": 4,
+     "ctr": 0.028,
+     "share": 13.4
+    },
+    {
+     "name": "Prime Video FAST",
+     "impr": 13944,
+     "clicks": 2,
+     "ctr": 0.014,
+     "share": 13.3
+    },
+    {
+     "name": "Prime Video ads",
+     "impr": 9352,
+     "clicks": 13,
+     "ctr": 0.139,
+     "share": 8.9
+    },
+    {
+     "name": "PubMatic",
+     "impr": 6057,
+     "clicks": 14,
+     "ctr": 0.231,
+     "share": 5.8
+    },
+    {
+     "name": "FreeWheel",
+     "impr": 5941,
+     "clicks": 0,
+     "ctr": 0.0,
+     "share": 5.7
+    },
+    {
+     "name": "Magnite DV+",
+     "impr": 5268,
+     "clicks": 46,
+     "ctr": 0.873,
+     "share": 5.0
+    },
+    {
+     "name": "Unruly",
+     "impr": 4820,
+     "clicks": 1,
+     "ctr": 0.021,
+     "share": 4.6
+    }
+   ],
+   "sites": [
+    {
+     "name": "mail.yahoo.com",
+     "impr": 10226,
+     "clicks": 2,
+     "ctr": 0.02
+    },
+    {
+     "name": "Samsung TV Plus- STV (ID: bbdb37fe63084b938641ad092cb4e684)",
+     "impr": 6431,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "smartnews.com",
+     "impr": 6398,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "amazon.com",
+     "impr": 4852,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "PV Fire TV (ID: b94d934eb5984fb8b161a5d292610c87)",
+     "impr": 3733,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "FireTV Channels (ID: firetv-video-news)",
+     "impr": 3527,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "PRIME_VIDEO_ADS_CHANNEL_ROKU_TV (ID: 48c38e27ff914ab982373e57c4157aa3)",
+     "impr": 2823,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "PRIME_VIDEO_ADS_FIRE_TV (ID: 7e944acd56594310bc41d19f03766435)",
+     "impr": 2450,
+     "clicks": 2,
+     "ctr": 0.082
+    },
+    {
+     "name": "alexa-devices (ID: 74d63f08fa1a31c7eaf451e009273d9c)",
+     "impr": 2397,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "Paramount EyeQ",
+     "impr": 2326,
+     "clicks": 0,
+     "ctr": 0.0
+    }
+   ],
+   "seg_reach": [
+    {
+     "name": "LS - Favorite Streaming Genre - Drama",
+     "impr": 166560,
+     "ctr": 0.204,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Health, Beauty or Fashion",
+     "impr": 163574,
+     "ctr": 0.187,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Comedy",
+     "impr": 162673,
+     "ctr": 0.204,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Suspense",
+     "impr": 161082,
+     "ctr": 0.209,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Adventure",
+     "impr": 158822,
+     "ctr": 0.202,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Romance",
+     "impr": 155498,
+     "ctr": 0.202,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Science Fiction",
+     "impr": 154884,
+     "ctr": 0.203,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Documentary",
+     "impr": 151143,
+     "ctr": 0.201,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "seg_ctr": [
+    {
+     "name": "FD - Viewed Awarness Spring 2026",
+     "impr": 6011,
+     "ctr": 1.597,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "Similar Audiences",
+     "impr": 4129,
+     "ctr": 1.187,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Beauty & Personal Care",
+     "impr": 7957,
+     "ctr": 0.603,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "Motorola",
+     "impr": 3155,
+     "ctr": 0.539,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "Cellphone",
+     "impr": 27441,
+     "ctr": 0.532,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "LS - Beauty Products Purchasers - New to category",
+     "impr": 9050,
+     "ctr": 0.53,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Beauty",
+     "impr": 6556,
+     "ctr": 0.519,
+     "conv": 0,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "Samsung",
+     "impr": 18831,
+     "ctr": 0.483,
+     "conv": 0,
+     "cls": "USER_AGENT"
+    }
+   ],
+   "seg_conv": [],
+   "clsmix": [
+    {
+     "label": "In-market & Lifestyle (Behavior)",
+     "impr": 7856348
+    },
+    {
+     "label": "Device / OS",
+     "impr": 843323
+    }
+   ]
+  },
+  "Yates Astro": {
+   "kpi": {
+    "impr": 285331,
+    "clicks": 2818,
+    "ctr": 0.988,
+    "conv": 4381,
+    "segments": 403,
+    "sites": 4057
+   },
+   "campaigns": [
+    {
+     "name": "Yates Astro | Awareness | June",
+     "impr": 146678,
+     "clicks": 185,
+     "ctr": 0.126,
+     "conv": 815
+    },
+    {
+     "name": "Yates Consideration | June",
+     "impr": 100822,
+     "clicks": 2624,
+     "ctr": 2.603,
+     "conv": 3558
+    },
+    {
+     "name": "Yates Astro - Awareness STV",
+     "impr": 37831,
+     "clicks": 9,
+     "ctr": 0.024,
+     "conv": 8
+    }
+   ],
+   "supply": [
+    {
+     "name": "ALEXA_DEVICES",
+     "impr": 79008,
+     "clicks": 7,
+     "ctr": 0.009,
+     "share": 27.7
+    },
+    {
+     "name": "Amazon Publisher Services",
+     "impr": 63606,
+     "clicks": 324,
+     "ctr": 0.509,
+     "share": 22.3
+    },
+    {
+     "name": "Prime Video FAST",
+     "impr": 31100,
+     "clicks": 0,
+     "ctr": 0.0,
+     "share": 10.9
+    },
+    {
+     "name": "Magnite DV+",
+     "impr": 23135,
+     "clicks": 923,
+     "ctr": 3.99,
+     "share": 8.1
+    },
+    {
+     "name": "Amazon Video FireTV Channels",
+     "impr": 11520,
+     "clicks": 0,
+     "ctr": 0.0,
+     "share": 4.0
+    },
+    {
+     "name": "Prime Video ads",
+     "impr": 11132,
+     "clicks": 8,
+     "ctr": 0.072,
+     "share": 3.9
+    },
+    {
+     "name": "PubMatic",
+     "impr": 9323,
+     "clicks": 374,
+     "ctr": 4.012,
+     "share": 3.3
+    },
+    {
+     "name": "Equativ Sharethrough",
+     "impr": 8729,
+     "clicks": 398,
+     "ctr": 4.56,
+     "share": 3.1
+    }
+   ],
+   "sites": [
+    {
+     "name": "alexa-devices (ID: 74d63f08fa1a31c7eaf451e009273d9c)",
+     "impr": 79008,
+     "clicks": 7,
+     "ctr": 0.009
+    },
+    {
+     "name": "amazon.com",
+     "impr": 14168,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "Samsung TV Plus- STV (ID: bbdb37fe63084b938641ad092cb4e684)",
+     "impr": 13519,
+     "clicks": 3,
+     "ctr": 0.022
+    },
+    {
+     "name": "FireTV Channels (ID: firetv-video-news)",
+     "impr": 11520,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "yahoo.com",
+     "impr": 8960,
+     "clicks": 2,
+     "ctr": 0.022
+    },
+    {
+     "name": "PV Fire TV (ID: b94d934eb5984fb8b161a5d292610c87)",
+     "impr": 8317,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "imdb.com",
+     "impr": 6657,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "Paramount EyeQ",
+     "impr": 4781,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "roku (ID: 151908)",
+     "impr": 4661,
+     "clicks": 0,
+     "ctr": 0.0
+    },
+    {
+     "name": "48c38e27ff914ab982373e57c4157aa3",
+     "impr": 3581,
+     "clicks": 0,
+     "ctr": 0.0
+    }
+   ],
+   "seg_reach": [
+    {
+     "name": "IM - Health, Beauty or Fashion",
+     "impr": 421298,
+     "ctr": 1.233,
+     "conv": 1214,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Drama",
+     "impr": 384093,
+     "ctr": 1.002,
+     "conv": 1091,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Comedy",
+     "impr": 374709,
+     "ctr": 0.979,
+     "conv": 1042,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Health & Household",
+     "impr": 366374,
+     "ctr": 1.355,
+     "conv": 1094,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Suspense",
+     "impr": 363241,
+     "ctr": 0.93,
+     "conv": 987,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Home & Kitchen",
+     "impr": 358618,
+     "ctr": 1.343,
+     "conv": 1058,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - House Keeper",
+     "impr": 355084,
+     "ctr": 1.281,
+     "conv": 1035,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Adventure",
+     "impr": 351755,
+     "ctr": 0.89,
+     "conv": 994,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "seg_ctr": [
+    {
+     "name": "LS - Android Users",
+     "impr": 20202,
+     "ctr": 5.534,
+     "conv": 62,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Grocery & Gourmet Food",
+     "impr": 5398,
+     "ctr": 5.02,
+     "conv": 17,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Cleansing Supplements",
+     "impr": 2814,
+     "ctr": 5.011,
+     "conv": 7,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Hair Care",
+     "impr": 3997,
+     "ctr": 4.829,
+     "conv": 14,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "Samsung Galaxy A15 5G",
+     "impr": 2290,
+     "ctr": 4.76,
+     "conv": 13,
+     "cls": "USER_AGENT"
+    },
+    {
+     "name": "LS - IMDb Entertainment Enthusiasts",
+     "impr": 14312,
+     "ctr": 4.451,
+     "conv": 41,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Fashion - Women - Clothing",
+     "impr": 2331,
+     "ctr": 4.29,
+     "conv": 3,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Fashion Women's Clothing",
+     "impr": 2341,
+     "ctr": 4.272,
+     "conv": 3,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "seg_conv": [
+    {
+     "name": "IM - Health, Beauty or Fashion",
+     "impr": 421298,
+     "ctr": 1.233,
+     "conv": 1214,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Health & Household",
+     "impr": 366374,
+     "ctr": 1.355,
+     "conv": 1094,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Drama",
+     "impr": 384093,
+     "ctr": 1.002,
+     "conv": 1091,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "IM - Home & Kitchen",
+     "impr": 358618,
+     "ctr": 1.343,
+     "conv": 1058,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - Favorite Streaming Genre - Comedy",
+     "impr": 374709,
+     "ctr": 0.979,
+     "conv": 1042,
+     "cls": "BEHAVIOR"
+    },
+    {
+     "name": "LS - House Keeper",
+     "impr": 355084,
+     "ctr": 1.281,
+     "conv": 1035,
+     "cls": "BEHAVIOR"
+    }
+   ],
+   "clsmix": [
+    {
+     "label": "In-market & Lifestyle (Behavior)",
+     "impr": 19262857
+    },
+    {
+     "label": "Device / OS",
+     "impr": 2441465
+    },
+    {
+     "label": "INVENTORY",
+     "impr": 153
+    }
+   ]
+  }
+ }
+}
