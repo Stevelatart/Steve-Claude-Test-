@@ -1224,6 +1224,86 @@
      "label": "INVENTORY",
      "impr": 153
     }
+   ],
+   "focus": [
+    {
+     "title": "Pest & bug intent",
+     "key": "pest",
+     "segments": [
+      {
+       "name": "IM - Patio, Lawn & Garden - Lawn & Plant Care - Insect & Pest Control",
+       "impr": 65492,
+       "ctr": 3.397,
+       "conv": 156
+      },
+      {
+       "name": "IM - Pest Repellents",
+       "impr": 14792,
+       "ctr": 0.392,
+       "conv": 28
+      },
+      {
+       "name": "IM - Off-Amazon Pest Repellent Shoppers",
+       "impr": 9184,
+       "ctr": 0.207,
+       "conv": 23
+      }
+     ]
+    },
+    {
+     "title": "Homeowner & home audiences",
+     "key": "home",
+     "segments": [
+      {
+       "name": "IM - Home & Kitchen",
+       "impr": 358618,
+       "ctr": 1.343,
+       "conv": 1058
+      },
+      {
+       "name": "LS - House Keeper",
+       "impr": 355084,
+       "ctr": 1.281,
+       "conv": 1035
+      },
+      {
+       "name": "IM - Home and Garden",
+       "impr": 197737,
+       "ctr": 1.346,
+       "conv": 593
+      },
+      {
+       "name": "LS - Interested in Home Improvement",
+       "impr": 162639,
+       "ctr": 1.179,
+       "conv": 481
+      },
+      {
+       "name": "Demo - Home Owners",
+       "impr": 130908,
+       "ctr": 0.256,
+       "conv": 408
+      },
+      {
+       "name": "IM - Patio, Lawn & Garden",
+       "impr": 139955,
+       "ctr": 3.357,
+       "conv": 356
+      },
+      {
+       "name": "IM - Home Automation Products within Home Improvement",
+       "impr": 79263,
+       "ctr": 2.237,
+       "conv": 209
+      },
+      {
+       "name": "IM - Lawn and Garden products",
+       "impr": 69945,
+       "ctr": 3.356,
+       "conv": 178
+      }
+     ]
+    }
    ]
   }
  }

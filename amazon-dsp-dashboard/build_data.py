@@ -28,6 +28,21 @@ CLASS_LABEL = {
     "OTHER": "Other",
 }
 
+# Client-specific "audience focus" panels: curated segment groups that matter to
+# the client's business, pulled from the audience segment report by keyword and
+# de-duplicated (Amazon exposes several near-identical segment aliases). Keyed by
+# advertiser account name; each group is (title, [keywords], exclude-keywords).
+FOCUS_RULES = {
+    "Yates Astro": [
+        ("Pest & bug intent", "pest",
+         ["pest", "insect", "repellent", "bug ", "mosquito", "termite", "rodent"], []),
+        ("Homeowner & home audiences", "home",
+         ["homeowner", "home owner", "home &", "home and garden", "home improvement",
+          "house keeper", "housekeeper", "patio", "lawn", "garden", "home automation"],
+         ["pest", "insect", "repellent", "tools"]),
+    ],
+}
+
 
 def num(x):
     if not x:
@@ -92,6 +107,32 @@ def top(dic, key, n, min_impr=0):
     return items[:n]
 
 
+def build_focus(name, segs):
+    """Curated category audience groups for a client (or None)."""
+    rules = FOCUS_RULES.get(name)
+    if not rules:
+        return None
+    groups = []
+    for title, key, kws, excl in rules:
+        rows, seen = [], set()
+        cand = []
+        for sn, v in segs.items():
+            ln = sn.lower()
+            if any(k in ln for k in kws) and not any(e in ln for e in excl):
+                cand.append((sn, v))
+        # rank by conversions, then reach; drop alias duplicates (identical metrics)
+        cand.sort(key=lambda x: (-x[1]["conv"], -x[1]["impr"]))
+        for sn, v in cand:
+            sig = (round(v["impr"]), round(v["conv"]), round(v["clicks"]))
+            if sig in seen:
+                continue
+            seen.add(sig)
+            rows.append({"name": sn, "impr": round(v["impr"]), "ctr": ctr(v),
+                         "conv": round(v["conv"])})
+        groups.append({"title": title, "key": key, "segments": rows[:8]})
+    return groups
+
+
 def build(C):
     out = {}
     for name, d in C.items():
@@ -124,6 +165,9 @@ def build(C):
             "campaigns": camps, "supply": supply, "sites": sites,
             "seg_reach": seg_reach, "seg_ctr": seg_ctr, "seg_conv": seg_conv, "clsmix": clsmix,
         }
+        focus = build_focus(name, d["segs"])
+        if focus:
+            out[name]["focus"] = focus
     order = sorted(out, key=lambda c: -out[c]["kpi"]["impr"])
     return {"period": "June 2026", "generated": "July 1, 2026", "order": order, "clients": out}
 
