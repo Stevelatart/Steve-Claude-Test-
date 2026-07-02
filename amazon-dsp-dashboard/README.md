@@ -24,6 +24,12 @@ Live version: https://claude.ai/code/artifact/d7d92c68-2ee1-4979-9634-98e8250e67
 - **Supply source mix** — top 8 exchanges/publishers by volume.
 - **Audience intelligence** — highest-engaging segments (by CTR) and
   top-converting segments, plus the split of segment exposure by targeting type.
+- **Category audience focus** *(Yates Astro only)* — curated pest-control and
+  homeowner audience groups, defined in `FOCUS_RULES` in `build_data.py`.
+- **Audience explorer** — every targeted segment for the client, with free-text
+  search (e.g. "residency", "pest", "home"), a type filter (In-market /
+  Lifestyle · Device / OS · Custom · Inventory), and click-to-sort columns.
+  Matched text is highlighted and above-account-average CTR is flagged green.
 - **Where ads ran** — top 10 sites and apps by impressions.
 
 ## Methodology (important)

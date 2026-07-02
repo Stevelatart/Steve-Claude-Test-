@@ -168,6 +168,13 @@ def build(C):
         focus = build_focus(name, d["segs"])
         if focus:
             out[name]["focus"] = focus
+        # Full segment list powering the interactive audience explorer.
+        out[name]["segments_all"] = [
+            {"name": k, "impr": round(v["impr"]), "ctr": ctr(v),
+             "conv": round(v["conv"]), "cls": v["cls"] or "OTHER"}
+            for k, v in sorted(d["segs"].items(), key=lambda x: -x[1]["impr"])
+            if v["impr"] >= 1
+        ]
     order = sorted(out, key=lambda c: -out[c]["kpi"]["impr"])
     return {"period": "June 2026", "generated": "July 1, 2026", "order": order, "clients": out}
 
